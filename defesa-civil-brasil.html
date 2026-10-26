@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Defesa Civil Brasil — guia offline de emergência</title>
+<meta name="description" content="Guia offline da Defesa Civil: números de emergência com discagem direta, passo a passo para 8 situações de risco, quiz de 50 perguntas e kit de emergência.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#ff4400;--ink:#1a1a1a;--paper:#ffffff;--bg:#f9fafb;--sec:#ebedf0;
+  --mut:#596169;--line:#d1d6d6;--mono:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:78px;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{text-transform:uppercase;letter-spacing:-.01em;line-height:1;margin:0}
+h1{font-size:30px;font-weight:900}
+h2{font-size:26px;font-weight:900}
+h3{font-size:17px;font-weight:900}
+p{margin:0}
+.mono{font-family:var(--mono)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.ic{width:22px;height:22px}
+.ic-sm{width:16px;height:16px}
+.ic-xs{width:12px;height:12px}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.lead{margin-top:14px;max-width:62ch;color:var(--mut);font-size:16px}
+.prodbar{background:var(--ink);border-bottom:4px solid var(--orange)}
+.prodbar:before{content:"";display:block;height:6px;background:repeating-linear-gradient(45deg,var(--orange) 0 8px,var(--ink) 8px 16px)}
+.prodbar-in{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 0;font-size:12px;color:#f9fafb}
+.prodbar-tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);white-space:nowrap}
+.top{position:sticky;top:0;z-index:30;background:var(--ink);color:#f9fafb;border-bottom:4px solid var(--orange)}
+.top-in{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:var(--orange);color:#fff;position:relative;overflow:hidden}
+.logo:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(45deg,var(--orange) 0 6px,var(--ink) 6px 12px)}
+.brand-tx{display:flex;flex-direction:column;line-height:1.1}
+.brand-tx strong{font-size:13px;font-weight:900;letter-spacing:.14em}
+.brand-tx small{font-size:9px;letter-spacing:.22em;opacity:.65}
+.call{display:flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-weight:700;font-size:13px;letter-spacing:.14em;padding:10px 14px}
+.tabs-top{display:none;gap:4px}
+.tab{display:flex;align-items:center;gap:8px;padding:8px 10px;font-size:11px;font-weight:700;letter-spacing:.14em;color:rgba(249,250,251,.65)}
+.tab.active{color:var(--orange)}
+.icwrap{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:2px solid transparent}
+.tab.active .icwrap{background:var(--orange);color:#fff}
+.tabs-mobile{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);background:var(--ink);border-top:4px solid var(--orange);padding-bottom:env(safe-area-inset-bottom)}
+.tabs-mobile .tab{flex-direction:column;gap:6px;padding:9px 2px;font-size:9px}
+main{display:block;min-height:60vh}
+.hero{background:linear-gradient(160deg,rgba(26,26,26,.98),rgba(26,26,26,.85));color:#f9fafb;border-bottom:4px solid var(--ink);padding:34px 0}
+.hero h1{margin-top:14px;font-size:34px}
+.hero p{margin-top:16px;max-width:70ch;color:rgba(249,250,251,.85);font-size:16px}
+.hero .tag{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--orange);color:var(--orange);padding:5px 10px;font-size:10px;font-weight:700;letter-spacing:.22em}
+.note{margin-top:14px;font-size:10px;letter-spacing:.18em;color:rgba(249,250,251,.6)}
+.grid2,.grid3{display:grid;gap:16px;grid-template-columns:1fr}
+.section,.block{padding:34px 0;border-bottom:4px solid var(--ink)}
+.block.alt{background:var(--sec);border-top:4px solid var(--ink)}
+.dial{display:flex;align-items:center;gap:14px;border:4px solid var(--ink);background:var(--paper);padding:14px;margin-top:16px}
+.hero .dial{margin-top:0;background:rgba(255,255,255,.06);border-color:#f9fafb;color:#f9fafb}
+.dial.critical{background:var(--orange);border-color:var(--orange);color:#fff}
+.dial.signal{border-color:var(--orange)}
+.dial-num{font-size:30px;font-weight:700;line-height:1}
+.dial-txt{flex:1;min-width:0;display:flex;flex-direction:column}
+.dial-txt strong{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.dial-txt small{font-size:12px;opacity:.8;margin-top:3px}
+.dial-go{display:flex;flex-direction:column;align-items:center;gap:4px;flex:0 0 auto}
+.dial-go em{font-style:normal;font-size:9px;letter-spacing:.18em;font-family:var(--mono)}
+.shero{position:relative;margin:0 -16px 26px;border-bottom:4px solid var(--ink);background:var(--ink)}
+.shero img{width:100%;height:230px;object-fit:cover;opacity:.85}
+.shero-t{position:absolute;inset:auto 0 0 0;padding:18px 16px;color:#fff;background:linear-gradient(to top,rgba(26,26,26,.95),rgba(26,26,26,0))}
+.shero-t h1{font-size:26px;margin-top:8px}
+.shero-t p{margin-top:8px;font-size:14px;color:rgba(255,255,255,.85)}
+.page{padding:26px 0}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.2em;color:var(--orange);font-weight:700}
+.cat{display:inline-block;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);font-weight:700}
+.card{border:4px solid var(--ink);background:var(--paper);padding:20px;margin-top:20px}
+.card h3{margin-bottom:14px}
+.card .sub{margin:-8px 0 12px;color:var(--mut);font-size:13px}
+.card-never{border-color:#a81f1f}
+.card-never h3{color:#a81f1f}
+.card-call{background:var(--sec)}
+.case{border-color:var(--orange)}
+.rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.rows li{display:flex;gap:10px;font-size:15px}
+.rows .no svg{color:#a81f1f}
+.rows .ok svg{color:var(--orange)}
+.dot{width:8px;height:8px;background:var(--orange);margin-top:8px;flex:0 0 auto}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.step{display:flex;gap:12px}
+.step-n{display:flex;align-items:center;justify-content:center;width:30px;height:30px;flex:0 0 auto;border:2px solid var(--ink);background:var(--ink);color:#f9fafb;font-size:12px;font-weight:700}
+.step strong{font-size:15px;font-weight:900;text-transform:uppercase;display:block}
+.step p{margin-top:6px;color:var(--mut);font-size:14px}
+.lesson{margin-top:12px;border-left:4px solid var(--orange);padding-left:14px;font-weight:700;font-size:14px}
+.scard{display:flex;flex-direction:column;border:4px solid var(--ink);background:var(--paper);margin-top:16px}
+.scard-img{position:relative;display:block;height:170px;border-bottom:4px solid var(--ink);overflow:hidden}
+.scard-img img{width:100%;height:170px;object-fit:cover}
+.scard-img em{position:absolute;top:0;right:0;font-style:normal;background:rgba(26,26,26,.9);color:#f9fafb;padding:5px 10px;font-size:10px;font-weight:700;letter-spacing:.16em;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.tile{position:absolute;left:12px;bottom:12px;display:flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--orange);color:#fff;border:2px solid var(--orange);overflow:hidden}
+.tile:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(45deg,var(--orange) 0 6px,var(--ink) 6px 12px)}
+.scard-body{display:flex;flex-direction:column;padding:16px}
+.scard-body strong{margin-top:8px;font-size:16px;font-weight:900;text-transform:uppercase;line-height:1.1}
+.scard-body small{margin-top:8px;color:var(--mut);font-size:14px}
+.scard-body em{margin-top:14px;font-style:normal;color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-family:var(--mono)}
+.checkhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:15px}
+.check input{position:absolute;opacity:0;width:0;height:0}
+.check .box{display:flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 auto;border:2px solid var(--ink);background:var(--paper);color:transparent}
+.check.done .box{background:var(--orange);border-color:var(--orange);color:#fff}
+.check.done .txt{text-decoration:line-through;color:var(--mut)}
+.quizbar{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:.16em;color:var(--mut)}
+.ring{position:relative;display:flex;align-items:center;justify-content:center;width:54px;height:54px}
+.ring svg{position:absolute;inset:0;width:54px;height:54px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:4}
+.ring-bg{stroke:var(--line)}
+.ring-fg{stroke:var(--orange);stroke-linecap:round;transition:stroke-dashoffset .3s linear}
+.ring.danger .ring-fg{stroke:#a81f1f}
+.ring b{font-size:15px;font-weight:700}
+.qcard{border:4px solid var(--ink);background:var(--paper);padding:22px;margin-top:22px}
+.qcard h2{margin-top:14px;font-size:22px}
+.opt{display:block;width:100%;text-align:left;margin-top:14px;padding:16px;border:4px solid var(--ink);background:var(--paper);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.opt:hover{background:var(--sec)}
+.opt.correct{background:#e8f5ec;border-color:#1f7a45}
+.opt.wrong{background:#fbeaea;border-color:#a81f1f}
+.opt:disabled{cursor:default}
+.fb{margin-top:20px;border:4px solid var(--ink);padding:18px}
+.fb.ok{border-color:#1f7a45;background:#e8f5ec}
+.fb.no{border-color:#a81f1f;background:#fbeaea}
+.fb strong{display:block;font-weight:900;text-transform:uppercase;font-size:14px}
+.fb p{margin-top:10px;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:16px 22px;border:4px solid var(--orange);background:var(--orange);color:#fff;font:inherit;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.foot{background:var(--ink);color:rgba(249,250,251,.8);padding:26px 0;font-size:13px}
+.foot strong{color:#f9fafb}
+.foot a{color:var(--orange);font-weight:700}
+.review{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.review li{border-left:4px solid #a81f1f;padding-left:12px;font-size:14px}
+.review small{display:block;color:var(--mut)}
+@media(min-width:1024px){
+  body{padding-bottom:0}
+  .tabs-mobile{display:none}
+  .tabs-top{display:flex}
+  .grid2{grid-template-columns:repeat(2,1fr)}
+  .grid3{grid-template-columns:repeat(3,1fr)}
+  h1{font-size:42px}
+  .hero h1{font-size:46px}
+  .shero img{height:340px}
+}
+</style>
+<script>if (window.self !== window.top) window.parent.postMessage({ type: 'SANDBOX_DOCUMENT_START' }, '*');</script><script>
+    (function() {
+        var buffer = window.__base44_preview_native_failures;
+        if (!buffer || buffer.version !== 1 || !Array.isArray(buffer.entries)) {
+            buffer = { version: 1, entries: [], listenersInstalled: false };
+            window.__base44_preview_native_failures = buffer;
+        }
+        if (buffer.listenersInstalled) return;
+        function value(object, key) {
+            return object && typeof object[key] === 'string' ? object[key] : '';
+        }
+        function append(message) {
+            if (!message) return;
+            var normalizedMessage = String(message).slice(0, 5000);
+            for (var index = buffer.entries.length - 1; index >= 0; index--) {
+                var existing = buffer.entries[index];
+                if (existing && existing.level === 'error' && existing.message === normalizedMessage) {
+                    buffer.entries.splice(index, 1);
+                }
+            }
+            buffer.entries.push({
+                level: 'error',
+                message: normalizedMessage,
+                timestamp: Date.now()
+            });
+            if (buffer.entries.length > 100) {
+                buffer.entries.splice(0, buffer.entries.length - 100);
+            }
+        }
+        buffer.append = append;
+        function handleError(event) {
+            var target = event && event.target;
+            var tagName = value(target, 'tagName').toLowerCase() || 'window';
+            var isModule = tagName === 'script' && value(target, 'type').toLowerCase() === 'module';
+            var resourceType = isModule ? 'module' : tagName;
+            var url = value(target, 'src') || value(target, 'href') || value(event, 'filename');
+            var detail = value(event, 'message') || value(event && event.error, 'message');
+            var prefix = tagName === 'window' ? 'Native browser error' : 'Failed to load ' + resourceType;
+            append(prefix + (url ? ' ' + url : '') + (detail ? ': ' + detail : ''));
+        }
+        function rejectionReason(reason) {
+            if (typeof reason === 'string') return reason;
+            var message = value(reason, 'message');
+            if (message) return message;
+            try { return JSON.stringify(reason) || String(reason); }
+            catch (e) { return String(reason); }
+        }
+        function handleRejection(event) {
+            append('Unhandled promise rejection: ' + rejectionReason(event && event.reason));
+        }
+        function handleCspViolation(event) {
+            var blockedUri = value(event, 'blockedURI') || 'resource';
+            var directive = value(event, 'violatedDirective');
+            append('Content Security Policy blocked ' + blockedUri + (directive ? ' (' + directive + ')' : ''));
+        }
+        function overlayText(root, selector) {
+            var element = root && root.querySelector(selector);
+            return value(element, 'textContent').trim();
+        }
+        function captureViteOverlay(overlay) {
+            var root = overlay && overlay.shadowRoot;
+            var message = overlayText(root, '.message-body');
+            if (!message) return;
+            var plugin = overlayText(root, '.plugin');
+            var details = ['Vite build error: ' + (plugin ? plugin + ' ' : '') + message];
+            var file = overlayText(root, '.file');
+            var frame = overlayText(root, '.frame');
+            var stack = overlayText(root, '.stack');
+            if (file) details.push('File: ' + file);
+            if (frame) details.push(frame);
+            if (stack) details.push(stack);
+            append(details.join(String.fromCharCode(10)));
+        }
+        function captureViteOverlays(node) {
+            if (!node || node.nodeType !== 1) return;
+            if (node.matches && node.matches('vite-error-overlay')) captureViteOverlay(node);
+            if (!node.querySelectorAll) return;
+            var overlays = node.querySelectorAll('vite-error-overlay');
+            for (var index = 0; index < overlays.length; index++) captureViteOverlay(overlays[index]);
+        }
+        window.addEventListener('error', handleError, true);
+        window.addEventListener('unhandledrejection', handleRejection);
+        window.addEventListener('securitypolicyviolation', handleCspViolation);
+        if (typeof MutationObserver !== 'undefined' && document.documentElement) {
+            captureViteOverlays(document.documentElement);
+            new MutationObserver(function(records) {
+                for (var recordIndex = 0; recordIndex < records.length; recordIndex++) {
+                    var nodes = records[recordIndex].addedNodes;
+                    for (var nodeIndex = 0; nodeIndex < nodes.length; nodeIndex++) {
+                        captureViteOverlays(nodes[nodeIndex]);
+                    }
+                }
+            }).observe(document.documentElement, { childList: true, subtree: true });
+        }
+        buffer.listenersInstalled = true;
+    })();
+    </script><script data-preview-data-env-pin="true">
+    (function() {
+        var KEY = 'base44_data_env';
+        var APP_API_PATH = "/api/apps/6adf978b24753c30fe55e391/";
+        var STORAGE_KEY = KEY + ':' + APP_API_PATH;
+        var API_ORIGINS = ["https://app.base44.com", "https://base44.app"].map(function(u) { return new URL(u).origin; });
+        var REQUEST_INIT_KEYS = [
+            'method', 'headers', 'credentials', 'mode', 'cache', 'redirect',
+            'referrer', 'referrerPolicy', 'integrity', 'keepalive', 'signal', 'priority',
+        ];
+        var env = new URLSearchParams(window.location.search).get(KEY);
+        try {
+            if (env === 'dev' || env === 'prod') sessionStorage.setItem(STORAGE_KEY, env);
+            else env = sessionStorage.getItem(STORAGE_KEY);
+        } catch (e) {}
+        if (env !== 'dev' && env !== 'prod') return;
+        function pin(url) {
+            try {
+                var u = new URL(url, window.location.href);
+                var sameOrigin = u.origin === window.location.origin;
+                if (!sameOrigin && API_ORIGINS.indexOf(u.origin) === -1) return url;
+                // The app's own server routes and TanStack server functions build
+                // their SDK client from this request, so they need the selection too.
+                var appServerPath = sameOrigin && (
+                    u.pathname.startsWith('/api/') || u.pathname.startsWith('/_serverFn/')
+                );
+                if (!appServerPath && !u.pathname.startsWith(APP_API_PATH)) return url;
+                // Privileged function/agent routes trust this app's Preview host,
+                // not a dev parameter sent to the generic SDK API origin.
+                if (u.origin !== window.location.origin && (
+                    u.pathname.startsWith(APP_API_PATH + 'functions/') ||
+                    u.pathname.startsWith(APP_API_PATH + 'agents/')
+                )) {
+                    u = new URL(u.pathname + u.search + u.hash, window.location.origin);
+                }
+                u.searchParams.set(KEY, env);
+                return u.toString();
+            } catch (e) { return url; }
+        }
+        var origFetch = window.fetch;
+        window.fetch = function(input, init) {
+            if (typeof input === 'string' || input instanceof URL) {
+                return origFetch.call(this, pin(String(input)), init);
+            }
+            if (!input || !input.url) return origFetch.call(this, input, init);
+            var pinned = pin(input.url);
+            if (pinned === input.url) return origFetch.call(this, input, init);
+            try {
+                input = new Request(input, init);
+                if (!input.keepalive || !input.body) {
+                    return origFetch.call(this, new Request(pinned, input));
+                }
+                // RequestInit exposes an existing body as a stream, which Fetch
+                // forbids with keepalive. Buffer only that case, after init overrides.
+                var self = this;
+                return input.blob().then(function(body) {
+                    var rebuilt = { body: body };
+                    REQUEST_INIT_KEYS.forEach(function(key) {
+                        if (input[key] !== undefined) rebuilt[key] = input[key];
+                    });
+                    return origFetch.call(self, new Request(pinned, rebuilt));
+                });
+            } catch (error) { return Promise.reject(error); }
+        };
+        var origOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+            arguments[1] = pin(String(url));
+            return origOpen.apply(this, arguments);
+        };
+    })();
+    </script><script defer data-preview-inject="true" data-app-id="6adf978b24753c30fe55e391" data-preview-type="sandbox" data-rum-app-id="db50c921-10c3-4f12-bccb-950fa174b708" data-rum-client-token="pubfe8a4f2972b412b4556fd67e77f82cb4" data-dd-site="datadoghq.com" src="https://app.base44.com/builder-bridge.js?t=1793041371"></script><script>
+    (function() {
+        var IGNORE = { SCRIPT: 1, STYLE: 1, LINK: 1, META: 1, NOSCRIPT: 1, TEMPLATE: 1 };
+        const fire = () => window.parent.postMessage({ type: 'IFRAME_CONTENT_READY' }, '*');
+        function check() {
+            var body = document.body;
+            if (!body) return false;
+            for (var idx = 0; idx < body.children.length; idx++) {
+                if (!IGNORE[body.children[idx].tagName]) return true;
+            }
+            return false;
+        }
+        function start() {
+            if (check()) { fire(); return; }
+            var observer = new MutationObserver(function() {
+                if (check()) { fire(); observer.disconnect(); }
+            });
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+        }
+        if (document.body) { start(); }
+        else { document.addEventListener('DOMContentLoaded', start, { once: true }); }
+    })();
+    </script><script>
+    (function() {
+        if (window.self === window.top) return;
+        var APP_ID = "6adf978b24753c30fe55e391";
+        var PREVIEW_TYPE = "sandbox";
+        var on404 = false;
+        var booted = false;
+        function detect() { return !!document.querySelector('[data-source-location^="PageNotFound:"]'); }
+        function payload() { return { app_id: APP_ID, preview_type: PREVIEW_TYPE, url_path: window.location.pathname }; }
+        function tick() {
+            var now = detect();
+            if (now && !on404) {
+                on404 = true;
+                window.parent.postMessage({ type: 'PREVIEW_PAGE_NOT_FOUND', payload: payload() }, '*');
+            } else if (!now && (on404 || !booted)) {
+                // On first tick of a fresh document, emit a cleared signal even when
+                // not currently on a 404 — the parent may have latched is404=true from
+                // a previous document at the same URL (e.g. after an iframe reload).
+                on404 = false;
+                window.parent.postMessage({ type: 'PREVIEW_PAGE_NOT_FOUND_CLEARED', payload: payload() }, '*');
+            }
+            booted = true;
+        }
+        function start() {
+            tick();
+            new MutationObserver(tick).observe(document.body, { childList: true, subtree: true });
+        }
+        if (document.body) { start(); }
+        else { document.addEventListener('DOMContentLoaded', start, { once: true }); }
+    })();
+    </script><script>
+    (function() {
+        if (window.self === window.top) return;
+        function fire() { window.parent.postMessage({ type: 'REACT_ROOT_HAS_CHILDREN' }, '*'); }
+        function findRoot() {
+            return document.getElementById('root')
+                || document.getElementById('app')
+                || document.querySelector('[data-react-root]');
+        }
+        // One-shot: wait for DOMContentLoaded (static HTML parsed by then, so the
+        // Base44 convention <div id="root"> is either present or not coming),
+        // observe the root's childList until the first element child appears,
+        // then fire and disconnect. No tree-wide subtree observer.
+        function start() {
+            var root = findRoot();
+            if (!root) return;
+            if (root.childElementCount > 0) { fire(); return; }
+            var obs = new MutationObserver(function() {
+                if (root.childElementCount > 0) { fire(); obs.disconnect(); }
+            });
+            obs.observe(root, { childList: true });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else { start(); }
+    })();
+    </script><script>
+    (function() {
+        if (window.self === window.top) return;
+        function postUnsupported(reason) {
+            window.parent.postMessage({
+                type: 'IFRAME_FIRST_CONTENTFUL_PAINT_UNSUPPORTED',
+                payload: { reason: reason, userAgent: navigator.userAgent }
+            }, '*');
+        }
+        if (typeof PerformanceObserver === 'undefined') {
+            postUnsupported('no_performance_observer');
+            return;
+        }
+        try {
+            var obs = new PerformanceObserver(function(list) {
+                var entries = list.getEntries();
+                for (var i = 0; i < entries.length; i++) {
+                    if (entries[i].name === 'first-contentful-paint') {
+                        obs.disconnect();
+                        window.parent.postMessage({ type: 'IFRAME_FIRST_CONTENTFUL_PAINT' }, '*');
+                        return;
+                    }
+                }
+            });
+            obs.observe({ type: 'paint', buffered: true });
+        } catch (e) {
+            postUnsupported('observe_threw:' + (e && e.name ? e.name : 'Error'));
+        }
+    })();
+    </script><script>
+    (function() {
+        if (window.self === window.top) return;
+        var APP_ID = "6adf978b24753c30fe55e391";
+        var PREVIEW_TYPE = "sandbox";
+        var DEPS_PATH = '/node_modules/.vite/deps/';
+        var fired = false;
+        function isViteDep(url) {
+            return typeof url === 'string' && url.indexOf(DEPS_PATH) !== -1;
+        }
+        function looksFailed(entry) {
+            // HTTP failure status (Chrome 109+).
+            if (entry.responseStatus && entry.responseStatus >= 400) return true;
+            // Aborted / blocked / network-error: request ran, nothing decoded.
+            // decodedBodySize === 0 distinguishes from cache hits (Safari has no
+            // deliveryType, so we can't rely on it to exclude cached responses).
+            return entry.transferSize === 0
+                && entry.decodedBodySize === 0
+                && entry.duration > 0
+                && entry.responseEnd > 0;
+        }
+        function report(entry) {
+            if (fired) return;
+            fired = true;
+            var nativeBuffer = window.__base44_preview_native_failures;
+            if (nativeBuffer && typeof nativeBuffer.append === 'function') {
+                nativeBuffer.append('Failed to load module ' + entry.name);
+            }
+            window.parent.postMessage({
+                type: 'SANDBOX_VITE_DEPS_404',
+                payload: {
+                    app_id: APP_ID,
+                    preview_type: PREVIEW_TYPE,
+                    url: entry.name,
+                    initiator_type: entry.initiatorType,
+                    response_status: entry.responseStatus
+                }
+            }, '*');
+        }
+        new PerformanceObserver(function(list) {
+            var entries = list.getEntries();
+            for (var i = 0; i < entries.length; i++) {
+                if (isViteDep(entries[i].name) && looksFailed(entries[i])) {
+                    report(entries[i]);
+                    return;
+                }
+            }
+        }).observe({ type: 'resource', buffered: true });
+    })();
+    </script><script>
+    (function() {
+        if (typeof PerformanceObserver === 'undefined') return;
+        var reported = {};
+        // Only the app's own module trees may put an error over the preview. A page
+        // can load an optional classic script (analytics, a widget) that fails while
+        // the app renders perfectly well; that must not read as broken app code.
+        // Recording is deliberately wider than reporting — the console buffer keeps
+        // every failed module for diagnostics.
+        function isAppModule(path) {
+            return path.indexOf('/src/') === 0 || path.indexOf('/base44/') === 0;
+        }
+        function modulePath(url) {
+            try {
+                var path = new URL(url, window.location.href).pathname;
+                // The bridge probes this standard SDK path opportunistically;
+                // legacy/custom apps are allowed not to provide it.
+                if (path === '/src/api/base44Client.js') return '';
+                if (path.indexOf('/node_modules/.vite/deps/') !== -1) return '';
+                return /[.](?:[cm]?[jt]sx?)$/i.test(path) ? path : '';
+            } catch (e) {
+                return '';
+            }
+        }
+        new PerformanceObserver(function(list) {
+            var entries = list.getEntries();
+            for (var index = 0; index < entries.length; index++) {
+                var entry = entries[index];
+                if (entry.initiatorType !== 'script') continue;
+                var status = entry.responseStatus;
+                if (!status) continue;
+                var path = modulePath(entry.name);
+                if (!path) continue;
+                if (status < 400) {
+                    // Recovered (an HMR fix re-requests it). Forget it, or breaking the
+                    // same path again later this document would be silently suppressed.
+                    delete reported[path];
+                    continue;
+                }
+                var message = status === 404
+                    ? 'Module not found: ' + path
+                    : 'Module failed to load (' + status + '): ' + path;
+                var buffer = window.__base44_preview_native_failures;
+                if (buffer && typeof buffer.append === 'function') buffer.append(message);
+                if (!isAppModule(path) || reported[path] || window.self === window.top) continue;
+                reported[path] = true;
+                window.parent.postMessage({
+                    type: 'SANDBOX_MODULE_LOAD_FAILED',
+                    payload: { path: path, status: status, message: message }
+                }, '*');
+            }
+        }).observe({ type: 'resource', buffered: true });
+    })();
+    </script><script>
+    (function() {
+        if (window.self === window.top) return;
+        if (typeof performance === 'undefined' || typeof performance.getEntriesByType !== 'function') return;
+        var DEPS_PATH = '/node_modules/.vite/deps/';
+        var QUIESCENCE_MS = 1500;
+        var POLL_MS = 500;
+        var fired = false;
+        var intervalId = setInterval(function() {
+            if (fired) return;
+            var entries = performance.getEntriesByType('resource');
+            var lastDepEnd = 0;
+            for (var i = 0; i < entries.length; i++) {
+                if (entries[i].name.indexOf(DEPS_PATH) === -1) continue;
+                if (entries[i].responseEnd > lastDepEnd) lastDepEnd = entries[i].responseEnd;
+            }
+            if (lastDepEnd === 0) return;
+            if (performance.now() - lastDepEnd >= QUIESCENCE_MS) {
+                fired = true;
+                clearInterval(intervalId);
+                window.parent.postMessage({ type: 'IFRAME_VITE_DEPS_SETTLED' }, '*');
+            }
+        }, POLL_MS);
+    })();
+    </script><script type="module">
+        try {
+            const { base44 } = await import("/src/api/base44Client.js");
+            if (base44) {
+                Object.defineProperty(window, "base44_sdk", {
+                    value: base44,
+                    writable: false,
+                    configurable: true
+                });
+            }
+        } catch (e) {
+            // Some legacy/custom apps may not have the standard client module.
+            // Leave window.base44_sdk undefined; PreviewLens can fall back to UI/network checks.
+            window.parent.postMessage({ type: "PREVIEW_LENS_SDK_ATTACH_FAILED", error: String(e) }, "*");
+        }
+        </script><script type="module">
+        try {
+            const { createHotContext } = await import("/@vite/client");
+            const hot = createHotContext("/__builder-bridge-hmr");
+            const previewFEVersion = Number(new URLSearchParams(window.location.search).get("previewFE_version")) || 0;
+            hot.on("vite:ws:connect", () => window.parent.postMessage({ type: "SANDBOX_WS_CONNECT" }, "*"));
+            hot.on("vite:ws:disconnect", () => window.parent.postMessage({ type: "SANDBOX_WS_DISCONNECT" }, "*"));
+        
+            hot.on("vite:error", (payload) => {
+                const err = payload && payload.err && typeof payload.err === "object" ? payload.err : {};
+                const message = typeof err.message === "string" ? err.message : "Unknown build error";
+                const plugin = typeof err.plugin === "string" ? `[plugin:${err.plugin}] ` : "";
+                const details = [`Vite build error: ${plugin}${message}`];
+                const loc = err.loc && typeof err.loc === "object" ? err.loc : null;
+                let file = loc && typeof loc.file === "string"
+                    ? loc.file
+                    : (typeof err.id === "string" ? err.id : "");
+                if (file) {
+                    file = file.split("?")[0];
+                    if (loc && Number.isFinite(loc.line) && Number.isFinite(loc.column)) {
+                        file += `:${loc.line}:${loc.column}`;
+                    }
+                    details.push(`File: ${file}`);
+                }
+                if (typeof err.frame === "string" && err.frame.trim()) details.push(err.frame.trim());
+                if (typeof err.stack === "string" && err.stack.trim()) details.push(err.stack.trim());
+
+                const nativeBuffer = window.__base44_preview_native_failures;
+                if (!nativeBuffer || typeof nativeBuffer.append !== "function") return;
+                nativeBuffer.append(details.join(String.fromCharCode(10)));
+            });
+    
+            // The pending promise holds Vite's pageReload (it awaits listeners) so the parent swaps a fresh iframe; an editor that doesn't announce previewFE_version falls back to today's in-place reload.
+            hot.on("vite:beforeFullReload", () => {
+                window.parent.postMessage({ type: "sandbox:beforeFullReload" }, "*");
+                if (previewFEVersion > 0) return new Promise(() => {});
+            });
+        } catch (e) {
+            window.parent.postMessage({ type: "SANDBOX_WS_ATTACH_FAILED", error: String(e) }, "*");
+        }
+        </script><script>
+    (function() {
+        if (window.self === window.top) return;
+        var lastUrl = window.location.href;
+        function notify() {
+            var url = window.location.href;
+            if (url === lastUrl) return;
+            lastUrl = url;
+            window.parent.postMessage({ type: 'APP_CHANGED_URL', url: url }, '*');
+        }
+        var origPush = history.pushState.bind(history);
+        history.pushState = function() { origPush.apply(history, arguments); notify(); };
+        var origReplace = history.replaceState.bind(history);
+        history.replaceState = function() { origReplace.apply(history, arguments); notify(); };
+        window.addEventListener('popstate', notify);
+        window.parent.postMessage({ type: 'APP_CHANGED_URL', url: window.location.href }, '*');
+    })();
+    </script></head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#/">
+      <span class="logo"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></span>
+      <span class="brand-tx"><strong>DEFESA CIVIL</strong><small class="mono">BRASIL · PRONTIDÃO</small></span>
+    </a>
+    <nav class="tabs-top" id="tabs-top"></nav>
+    <a class="call mono" href="tel:193">CHAMAR 193</a>
+  </div>
+</header>
+<div class="prodbar">
+  <div class="wrap prodbar-in">
+    <span class="prodbar-tag">Arquivo em produção</span>
+    <span>Versão oficial do guia de prontidão. Não altere o conteúdo deste arquivo — ele é conferido contra o site.</span>
+  </div>
+</div>
+<main id="app"></main>
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>Versão offline em arquivo único.</strong> Salve este arquivo no celular e abra pelo navegador: os números, os oito guias, o quiz e o kit funcionam sem internet. Apenas as fotos precisam de conexão.</p>
+    <p><strong>Arquivo em produção:</strong> é a versão oficial do guia. Não altere o conteúdo.</p>
+    <p class="mono" style="margin-top:14px;font-size:11px;letter-spacing:.16em">EMERGÊNCIA: <a href="tel:193">193 BOMBEIROS</a> · <a href="tel:192">192 SAMU</a> · <a href="tel:190">190 POLÍCIA</a> · <a href="tel:199">199 DEFESA CIVIL</a></p>
+  </div>
+</footer>
+<nav class="tabs-mobile" id="tabs-mobile"></nav>
+<script>window.DC_DATA = {"icons":{"Shield":"\u003cpath d=\"M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z\"/>","PhoneCall":"\u003cpath d=\"M5 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z\"/>","Home":"\u003cpath d=\"M4 11l8-6 8 6v9H4z\"/>\u003cpath d=\"M10 20v-6h4v6\"/>","AlertTriangle":"\u003cpath d=\"M12 4l9 16H3z\"/>\u003cpath d=\"M12 10v4\"/>\u003cpath d=\"M12 17h.01\"/>","Target":"\u003ccircle cx=\"12\" cy=\"12\" r=\"8\"/>\u003ccircle cx=\"12\" cy=\"12\" r=\"3\"/>\u003cpath d=\"M12 2v3M12 19v3M2 12h3M19 12h3\"/>","Briefcase":"\u003crect x=\"3\" y=\"8\" width=\"18\" height=\"12\"/>\u003cpath d=\"M9 8V6h6v2\"/>","Flame":"\u003cpath d=\"M12 3c3 4 5 6 5 9a5 5 0 01-10 0c0-1.5.6-2.8 1.7-4C10 6.5 11 5 12 3z\"/>","Wind":"\u003cpath d=\"M3 8h11a3 3 0 100-6\"/>\u003cpath d=\"M3 12h15a3 3 0 110 6\"/>\u003cpath d=\"M3 16h6\"/>","Waves":"\u003cpath d=\"M2 8q2.5-2 5 0t5 0 5 0\"/>\u003cpath d=\"M2 14q2.5-2 5 0t5 0 5 0\"/>","Mountain":"\u003cpath d=\"M3 20l7-12 4 6 2-3 5 9z\"/>","CloudLightning":"\u003cpath d=\"M7 16a4 4 0 010-8 5 5 0 019.6 1.5A3.5 3.5 0 0116 16z\"/>\u003cpath d=\"M12 12l-2 4h3l-2 5\"/>","Activity":"\u003cpath d=\"M3 12h4l2-6 4 12 2-6h5\"/>","HardHat":"\u003cpath d=\"M4 15a8 8 0 0116 0\"/>\u003cpath d=\"M2 15h20v4H2z\"/>\u003cpath d=\"M12 7v3\"/>","LifeBuoy":"\u003ccircle cx=\"12\" cy=\"12\" r=\"9\"/>\u003ccircle cx=\"12\" cy=\"12\" r=\"4\"/>\u003cpath d=\"M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M18.4 5.6l-4.2 4.2M9.8 14.2l-4.2 4.2\"/>","X":"\u003cpath d=\"M6 6l12 12M18 6L6 18\"/>","Eye":"\u003cpath d=\"M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z\"/>\u003ccircle cx=\"12\" cy=\"12\" r=\"2.5\"/>","Check":"\u003cpath d=\"M4 12l5 5L20 6\"/>","Clock":"\u003ccircle cx=\"12\" cy=\"12\" r=\"9\"/>\u003cpath d=\"M12 7v5l4 2\"/>","History":"\u003cpath d=\"M3 12a9 9 0 109-9 9 9 0 00-7 3.3\"/>\u003cpath d=\"M3 4v4h4\"/>\u003cpath d=\"M12 8v4l3 2\"/>","ArrowLeft":"\u003cpath d=\"M19 12H5\"/>\u003cpath d=\"M11 6l-6 6 6 6\"/>","Users":"\u003ccircle cx=\"9\" cy=\"8\" r=\"3\"/>\u003cpath d=\"M3 20a6 6 0 0112 0\"/>\u003cpath d=\"M16 6.5a3 3 0 010 5.5\"/>\u003cpath d=\"M18 20a6 6 0 00-2-4.5\"/>"},"numbers":[{"number":"193","service":"Corpo de Bombeiros","description":"Incêndio, fumaça, resgate, salvamento, fio caído, vítima presa em ferragens.","group":"Risco de vida","tone":"critical"},{"number":"192","service":"SAMU","description":"Emergência médica: desmaio, falta de ar, dor no peito, ferimento grave, parto.","group":"Risco de vida","tone":"critical"},{"number":"190","service":"Polícia Militar","description":"Crime em andamento, ameaça, agressão, pessoa armada, local sem segurança.","group":"Risco de vida","tone":"critical"},{"number":"199","service":"Defesa Civil","description":"Alagamento, deslizamento, risco de desabamento, vistoria de área de risco e alertas.","group":"Desastres e riscos","tone":"signal"},{"number":"191","service":"Polícia Rodoviária Federal","description":"Acidente, veículo quebrado, animal na pista em rodovias federais (BRs).","group":"Rodovias","tone":"default"},{"number":"198","service":"Polícia Rodoviária Estadual","description":"Ocorrências em rodovias estaduais.","group":"Rodovias","tone":"default"},{"number":"197","service":"Polícia Civil","description":"Registro de ocorrência, investigação, pessoa desaparecida.","group":"Segurança e denúncia","tone":"default"},{"number":"181","service":"Disque Denúncia","description":"Denúncia anônima: arma, droga, foragido, ponto de crime.","group":"Segurança e denúncia","tone":"default"},{"number":"194","service":"Polícia Federal","description":"Crimes federais, fronteiras, imigração, tráfico internacional.","group":"Segurança e denúncia","tone":"default"},{"number":"180","service":"Central de Atendimento à Mulher","description":"Violência contra a mulher: orientação e denúncia, 24 horas, gratuito.","group":"Apoio e direitos","tone":"default"},{"number":"100","service":"Direitos Humanos","description":"Violência contra crianças, adolescentes, idosos e pessoas com deficiência.","group":"Apoio e direitos","tone":"default"},{"number":"188","service":"CVV — apoio emocional","description":"Prevenção do suicídio e apoio emocional, 24 horas, gratuito e sigiloso.","group":"Apoio e direitos","tone":"default"}],"groupOrder":["Risco de vida","Desastres e riscos","Segurança e denúncia","Rodovias","Apoio e direitos"],"primary":["193","192","190"],"notes":["911 e 112 não funcionam no Brasil: use 190 (Polícia), 192 (SAMU) e 193 (Bombeiros).","Muitos municípios têm número próprio da Defesa Civil além do 199 — vale salvar o da sua cidade no celular.","Ao ligar, fale devagar e informe: endereço completo com ponto de referência, o que aconteceu, quantas pessoas e se há feridos.","Se possível, não desligue antes do atendente encerrar a ligação: ele pode orientar o socorro enquanto a equipe se desloca."],"alert":{"number":"40199","title":"Alertas da Defesa Civil por SMS","steps":["Abra o aplicativo de mensagens do celular.","Escreva o seu CEP com 8 dígitos (ex.: 20040020) e envie para 40199.","Você passa a receber alertas de risco na sua região, de graça.","Repita para o CEP do trabalho, da escola dos filhos ou de parentes."],"note":"Também vale acompanhar rádio, TV local e as redes da Defesa Civil do seu estado ou município."},"callTips":["Atenda ao celular bloqueado: é assim que o atendente retorna, caso a ligação caia.","Fale o endereço completo com número, bairro, cidade e ponto de referência visível.","Diga o que aconteceu, quantas pessoas estão envolvidas e se há feridos.","Deixe uma pessoa na rua para orientar a chegada da equipe, se for seguro."],"situations":[{"slug":"incendio","title":"Incêndio e fumaça","category":"Incêndio e fumaça","icon":"Flame","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/fe7ee541e_generated_image.png","tagline":"Saia primeiro. Ligue 193 depois — de fora do imóvel.","summary":"Em um incêndio, a fumaça mata mais do que o fogo. Ela sobe e se acumula no teto, então o ar respirável fica perto do chão.","quick":["Avisar todos e sair imediatamente, sem pegar nada.","Se houver fumaça no caminho, agachar ou rastejar: o ar limpo está embaixo.","Fechar as portas ao sair (sem trancar) para conter o fogo.","Usar a escada, nunca o elevador, e ligar 193 do lado de fora."],"steps":[{"title":"1. Sair é a primeira tarefa","text":"Cada segundo dentro do imóvel reduz sua chance de sair. Não procure documentos, celular ou animais em um ambiente já tomado por fumaça. Leve as pessoas e vá."},{"title":"2. Vencer a fumaça","text":"A fumaça quente sobe. Ande agachado ou rastejando, com o rosto o mais perto possível do chão, e cubra nariz e boca com um pano, de preferência úmido."},{"title":"3. Testar a porta com as costas da mão","text":"Encoste as costas da mão na porta antes de abrir. Se estiver quente, não abra: o fogo está atrás dela. Procure outra saída e, se não houver, sele a fenda com pano molhado e sinalize na janela."},{"title":"4. Roupa em chamas","text":"Pare, deite e role no chão para abafar as chamas. Não corra: o movimento alimenta o fogo. Depois, cubra a pessoa com um tecido e mantenha-a aquecida até o socorro chegar."},{"title":"5. Em prédio","text":"Acione o alarme, avise os vizinhos do andar e desça pela escada de emergência. Ao sair, vá para o ponto de encontro e faça a contagem das pessoas. Se não conseguir descer, fique em um cômodo com janela, feche a porta e sinalize."},{"title":"6. Ligar 193 com as informações certas","text":"Endereço completo com ponto de referência, andar e apartamento, o que está queimando, se há pessoas dentro e onde estão, e se há botijão de gás ou produtos químicos no local."},{"title":"7. Fogo na cozinha","text":"Óleo ou gordura em chamas: desligue o fogo e tape a panela com uma tampa ou pano grosso. Água nunca: ela espalha o fogo. Em fogo elétrico, desligue o disjuntor antes de qualquer coisa."}],"never":["Voltar para buscar objetos ou documentos.","Usar o elevador durante o incêndio.","Abrir uma porta que está quente ao toque.","Jogar água em óleo em chamas ou em equipamento elétrico energizado.","Deixar o carro da família parado na frente do imóvel, atrapalhando os bombeiros."],"watchFor":["Cheiro de queimado sem fogo visível (pode ser instalação elétrica).","Alarme de fumaça disparando, mesmo sem fogo aparente.","Fumaça escura saindo de tomadas, ar-condicionado ou quadro de energia.","Aquecimento incomum em paredes onde passam fios."],"phones":[{"number":"193","label":"Corpo de Bombeiros"},{"number":"192","label":"SAMU (feridos)"}],"realCase":{"place":"Boate Kiss — Santa Maria (RS), 27 de janeiro de 2013","text":"Um incêndio iniciado em espuma acústica atingiu a casa cheia. A maioria das 242 vítimas morreu por inalação de fumaça tóxica, e não pelas chamas, em um local com saída única e sem sinalização de rota de fuga.","lesson":"Antes de entrar em qualquer lugar cheio, localize a saída mais próxima e a alternativa. Sinalização de saída e número de saídas são vida."}},{"slug":"vazamento-de-gas","title":"Vazamento de gás","category":"Gás e eletricidade","icon":"Wind","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/37b05651b_generated_image.png","tagline":"Nada de interruptor, nada de fósforo. Ventile e saia.","summary":"Uma faísca mínima — do interruptor de luz, do celular ou de um isqueiro — já é suficiente para inflamar o gás acumulado.","quick":["Não acender nem apagar luzes e não acionar interruptores.","Abrir janelas e portas para o gás dispersar.","Fechar o registro do botijão ou do medidor.","Sair e só então usar o celular, já do lado de fora."],"steps":[{"title":"1. Nada que faça faísca","text":"Não ligue luzes, não use o interruptor, não acenda fósforo, isqueiro ou vela e não use o celular dentro da área. Se já houver luz acesa, deixe como está."},{"title":"2. Ventilar","text":"Abra janelas, portas e áreas de circulação para o gás escapar. O gás de cozinha (GLP) é mais pesado que o ar e se acumula nas partes baixas do ambiente."},{"title":"3. Fechar o gás","text":"Feche o registro do botijão girando no sentido horário e, em prédios com gás encanado, feche o registro geral do apartamento ou do andar."},{"title":"4. Sair e chamar ajuda","text":"Retire todas as pessoas e animais do imóvel. Do lado de fora, em local seguro e ventilado, ligue 193 (Bombeiros). Se houver explosão ou feridos, ligue também 192."},{"title":"5. Botijão em chamas","text":"Não tente retirar o botijão nem deitá-lo. Afaste todos, chame o 193 e, se conseguir chegar com proteção, feche o registro pelas costas do cilindro, com pano grosso nas mãos."},{"title":"6. Depois do susto","text":"Só volte a usar o gás depois de uma vistoria. Teste o vazamento com água e sabão nas conexões: se formar bolhas, há escape. Nunca use chama para procurar vazamento e troque mangueiras vencidas."}],"never":["Procurar o vazamento com fósforo, isqueiro ou vela.","Acender o chuveiro elétrico, ligar ventilador ou qualquer aparelho na tomada.","Fumar ou usar o celular dentro do ambiente com cheiro de gás.","Transportar botijão deitado dentro do porta-malas, sem tampão, ou em elevador com pessoas.","Guardar botijão em local fechado sem ventilação."],"watchFor":["Cheiro forte e persistente de gás mesmo com o registro fechado.","Assovio ou ruído de escape na mangueira ou no regulador.","Bolhas de sabão nas conexões ao passar água com sabão.","Chama com ponta amarela irregular e fuligem na panela."],"phones":[{"number":"193","label":"Corpo de Bombeiros"},{"number":"192","label":"SAMU (queimados)"}],"realCase":{"place":"Edifício no Largo do Paissandu — São Paulo (SP), 1º de maio de 2018","text":"Um incêndio de longa duração em um edifício de 24 andares ocupado de forma irregular terminou com o colapso total da estrutura. Moradores e vizinhos relataram falta de saída de emergência adequada e de alarme.","lesson":"Instalação elétrica e de gás improvisada, sem manutenção, é fator de risco real. Em incêndio de estrutura antiga, sair nas primeiras horas é decisivo."}},{"slug":"enchente","title":"Enchente e alagamento","category":"Água e chuva","icon":"Waves","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/e664c6d2f_generated_image.png","tagline":"Sair antes da água chegar é a decisão que salva.","summary":"Quinze centímetros de água em movimento já derrubam uma pessoa. Trinta centímetros arrastam um carro pequeno. A água de enchente também carrega esgoto e doença.","quick":["Sair cedo para um ponto alto, antes de a água chegar na porta.","Desligar o disjuntor geral e fechar o registro de gás, se for seguro.","Nunca atravessar a pé, de moto ou de carro uma área alagada.","Levar documentos em saco plástico, água, remédios e celular carregado."],"steps":[{"title":"1. Acompanhar os alertas","text":"Cadastre-se nos avisos por SMS da Defesa Civil (envie o CEP para 40199) e acompanhe rádio e canais oficiais do seu município. Chuva forte prevista é tempo de preparar a saída, não de esperar."},{"title":"2. Preparar antes","text":"Coloque documentos, remédios de uso contínuo, água, lanterna e carregador em uma mochila leve, protegida por saco plástico. Fotografe documentos e guarde no celular."},{"title":"3. Sair no momento certo","text":"Se a água está subindo na rua, saia agora, com as pessoas e os animais, para a casa de parente em terreno mais alto, escola ou abrigo indicado pela Defesa Civil. Não espere a água entrar em casa."},{"title":"4. Antes de sair de casa","text":"Desligue o disjuntor geral da energia e feche o registro de gás e a água, se conseguir fazer isso sem contato com a água acumulada. Feche bem portas e janelas."},{"title":"5. Nunca atravessar","text":"Não atravesse a pé, de bicicleta, moto ou carro. A correnteza esconde buracos, bueiros abertos e fios energizados. Se a água já subiu e você está dentro do carro, saia pela janela e suba para o teto."},{"title":"6. Preso em casa ou no carro","text":"Vá para o andar mais alto ou para o telhado, avise alguém por telefone e ligue 199 (Defesa Civil) ou 193 (Bombeiros). Sinalize com pano claro na janela ou no telhado para ser visto do alto."},{"title":"7. Depois da água baixar","text":"Só volte com a liberação da Defesa Civil. Use botas e luvas, evite contato com a lama, lave mãos e braços com água e sabão. Não beba água da torneira até a rede ser liberada, descarte alimentos molhados e não ligue aparelhos elétricos que ficaram submersos antes de secarem e serem revisados."}],"never":["Atravessar água em movimento: a força e a profundidade enganam.","Dirigir para dentro de um alagamento — a maioria das mortes acontece dentro do carro.","Andar na água perto de postes, fios caídos ou tomadas.","Deixar crianças e idosos sozinhos em casa durante o alerta de enchente.","Entupir bueiros e bocas de lobo com lixo: é o que faz a água subir mais rápido."],"watchFor":["Chuva forte e contínua com duração de várias horas.","Água barrenta descendo pelas ruas ou brotando do chão.","Rio, córrego ou canal com nível subindo visivelmente.","Alerta de risco hidrológico emitido pela Defesa Civil ou pelo CEMADEN."],"phones":[{"number":"199","label":"Defesa Civil"},{"number":"193","label":"Corpo de Bombeiros"},{"number":"192","label":"SAMU (feridos)"}],"realCase":{"place":"Rio Grande do Sul, abril e maio de 2024","text":"A maior enchente já registrada no estado atingiu centenas de municípios, deixou mais de 180 mortes e milhares de pessoas isoladas em telhados e áreas altas, com cidades inteiras sem água, energia e acesso por estradas.","lesson":"Sair nas primeiras horas do alerta, com documentos e remédios, é muito mais seguro do que sair de casa quando a água já chegou às ruas."}},{"slug":"deslizamento","title":"Deslizamento de terra","category":"Água e chuva","icon":"Mountain","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/47f4e64c3_generated_image.png","tagline":"Chuva longa em encosta é aviso de saída, não de espera.","summary":"Encostas encharcadas escorregam sem aviso de segundos. Quem mora na base ou no meio do morro enfrenta o risco que mais mata nas chuvas brasileiras.","quick":["Sair de casa durante a chuva forte, antes de qualquer movimento de terra.","Nunca correr encosta abaixo: deslocar-se para o lado, em terreno plano.","Avisar os vizinhos, começando por idosos e crianças.","Ligar 199 (Defesa Civil) para avaliação de risco e 193 se houver vítimas."],"steps":[{"title":"1. Sinais que pedem saída imediata","text":"Rachaduras novas em paredes, muro ou no terreno; postes e árvores inclinando; portas e janelas que travam de repente; água barrenta brotando na encosta; estalos e pedras rolando. Um sinal já basta: saia."},{"title":"2. Sair do jeito certo","text":"Vá para o lado, buscando terreno plano e firme, nunca descendo pela linha da encosta. Não fique abaixo de barrancos, muros altos ou da própria casa."},{"title":"3. Avisar quem está perto","text":"Bata na porta dos vizinhos e chame todos para fora. Idosos, pessoas com deficiência e crianças saem primeiro e com acompanhante."},{"title":"4. Lugar seguro definido antes","text":"Combine com a família, em dia de sol, um ponto de encontro seguro: escola, igreja, quadra ou casa de parente em área plana. Combine também quem busca quem."},{"title":"5. Se alguém foi soterrado","text":"Não cave nem use enxada, picareta ou pá por conta própria: isso pode desestabilizar o restante da massa e ferir a vítima. Ligue 193 imediatamente, mantenha contato falando com a pessoa, marque o local com uma roupa ou pano bem visível e afaste curiosos."},{"title":"6. Depois","text":"Só volte para casa com laudo e liberação da Defesa Civil. Se o imóvel foi atingido, faça o registro com fotos e procure a assistência do município e da Defesa Civil estadual."}],"never":["Voltar para buscar objetos durante a chuva.","Dormir em casa com encosta encharcada logo acima e sinais de rachadura.","Descer a encosta correndo para fugir: o deslizamento acompanha o mesmo caminho.","Cortar árvores e vegetação da encosta ou jogar água da chuva e esgoto direto no barranco.","Construir, ampliar ou fazer muro sem acompanhamento técnico em área de risco."],"watchFor":["Chuva forte acumulada por várias horas seguidas, principalmente à noite.","Rachaduras no solo, no muro, na parede ou no piso.","Portas, janelas e gavetas que passam a travar de repente.","Água barrenta saindo da encosta, estalos, árvores e postes tortos."],"phones":[{"number":"199","label":"Defesa Civil"},{"number":"193","label":"Corpo de Bombeiros"},{"number":"190","label":"Polícia Militar (área insegura)"}],"realCase":{"place":"Petrópolis (RJ), 15 de fevereiro de 2022","text":"Chuva intensa em poucas horas provocou dezenas de deslizamentos e 233 mortes, a maioria em moradias construídas em encostas e às margens de córregos, com vítimas durante a madrugada.","lesson":"O deslizamento não avisa. Quando a chuva se acumula por horas em encosta habitada, a decisão correta é ir dormir em outro lugar, antes do barulho."}},{"slug":"tempestade","title":"Tempestade, raios e vendaval","category":"Tempestade e raios","icon":"CloudLightning","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/e2c747896_generated_image.png","tagline":"Sob teto, longe de janelas, árvores e fios.","summary":"O Brasil é um dos países com mais raios do mundo. Descargas elétricas e quedas de árvore e de energia estão entre as principais causas de morte e ferimento em temporais.","quick":["Entrar em imóvel fechado ou veículo com teto rígido até a tempestade passar.","Ficar longe de janelas, portas abertas e estruturas metálicas.","Sair da praia, da piscina, do campo e do topo de áreas abertas.","Deixar aparelhos fora da tomada e evitar uso do chuveiro durante a descarga."],"steps":[{"title":"1. Onde se abrigar","text":"Prefira construção fechada, de alvenaria, com janelas e portas fechadas. Em último caso, um veículo com teto rígido protege contra o raio: fique dentro dele, sem tocar em partes metálicas e sem sair até passar."},{"title":"2. Longe de raios","text":"Saia de praia, piscina, rio, lago e campo aberto. Afaste-se de árvores isoladas, postes, cercas de arame, antenas, andaimes, quadras e do telhado. Não carregue objetos longos de metal, como enxada, foice, bicicleta ou vara de pesca."},{"title":"3. Dentro de casa","text":"Afastar-se de janelas e fechar cortinas. Evitar chuveiro, torneira e máquinas de lavar durante a descarga — a rede hidráulica conduz energia. Retire da tomada televisão, computador, carregadores e eletrodomésticos."},{"title":"4. Vendaval","text":"Feche e trave janelas, afaste-se de vidros e retire vasos, telhas soltas e objetos de sacadas e quintais. Se o vento virar, abra uma janela do lado oposto para equilibrar a pressão e proteger o telhado."},{"title":"5. Fio ou árvore caída","text":"Fio no chão nunca se toca, nem se aproxima: considere-o energizado, mantenha pelo menos 10 metros de distância e mantenha as pessoas e animais longe. Ligue 193 (Bombeiros) e a distribuidora de energia. Se o fio caiu sobre um veículo, oriente os ocupantes a permanecer dentro e sem tocar em nada até a energia ser desligada."},{"title":"6. Queda de energia prolongada","text":"Use lanterna em vez de vela. Não abra a geladeira sem necessidade, guarde o gelo em caixa térmica e priorize remédios e carregadores de celular. Se alguém depende de aparelho elétrico para respirar, avise a Defesa Civil 199 e vá para local com energia."}],"never":["Abrigar-se debaixo de árvore isolada ou de estrutura metálica.","Permanecer na praia, na piscina ou em campo aberto com o temporal chegando.","Subir no telhado para consertar algo durante a chuva.","Tocar ou se aproximar de fios caídos, portões automáticos e cercas energizadas.","Usar bicicleta, moto ou trator em campo aberto durante a descarga."],"watchFor":["Nuvens escuras e baixas, com vento virando de direção.","Chuva acompanhada de raios e trovões cada vez mais próximos.","Aviso meteorológico laranja ou vermelho do INMET para o seu município.","Escurecimento repentino durante o dia, no meio da tarde."],"phones":[{"number":"193","label":"Corpo de Bombeiros"},{"number":"199","label":"Defesa Civil"},{"number":"192","label":"SAMU (vítima de raio)"}],"realCase":{"place":"Brasil — país com maior incidência de raios do mundo","text":"Levantamentos do Grupo de Eletricidade Atmosférica do INPE apontam dezenas de milhões de descargas por ano no país e cerca de uma centena de mortes anuais, concentradas em atividades rurais, na pesca e em praias.","lesson":"A maior parte das mortes por raio ocorre em locais abertos, em atividades rotineiras. Ao primeiro trovão, procure abrigo — cerca de metade dos casos acontece antes ou depois do pico da tempestade."}},{"slug":"tremor-de-terra","title":"Terremoto e tremor de terra","category":"Estrutural","icon":"Activity","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/f4844db4a_generated_image.png","tagline":"Agachar, proteger a cabeça, segurar. Só depois sair.","summary":"O Brasil tem atividade sísmica baixa, mas tremores acontecem — e a maioria dos ferimentos vem de queda de objetos, vidros e paredes, não do tremor em si.","quick":["Agachar-se embaixo de mesa resistente e proteger a cabeça com os braços.","Ficar longe de janelas, espelhos, armários e prateleiras.","Não correr para a saída durante o tremor.","Depois, sair pela escada, com calma, e ir para área aberta."],"steps":[{"title":"1. Durante o tremor","text":"Agache-se, proteja-se e segure firme: entre embaixo de mesa ou escrivaninha resistente, proteja cabeça e pescoço com os braços e espere o tremor passar. Se estiver na cama, cubra a cabeça com o travesseiro e permaneça ali."},{"title":"2. Onde não ficar","text":"Afastar-se de janelas, vidros, espelhos, quadros, armários altos, luminárias e paredes sem sustentação. Não fique sob a marquise, sob a fachada ou perto de sacadas."},{"title":"3. Na rua ou em área aberta","text":"Se você já está em área aberta, fique ali: é o lugar mais seguro. Afaste-se de prédios, muros, postes, fios e árvores e proteja a cabeça."},{"title":"4. Saindo depois","text":"Depois que o tremor parar, saia com calma pela escada — nunca pelo elevador — e leve apenas documentos, água e remédios. Espere a réplica passar em área aberta antes de entrar em qualquer construção."},{"title":"5. Ao voltar","text":"Verifique vazamento de gás pelo cheiro, sem acender nada, e desligue a energia se houver fios expostos. Rachadura nova, piso torto ou porta que travou: avise a Defesa Civil (199) e mantenha a família fora do imóvel."}],"never":["Usar elevador durante ou logo depois do tremor.","Acender fósforo, vela ou isqueiro: pode haver vazamento de gás.","Correr para a rua durante o tremor, sob fachadas e vidros.","Voltar para buscar objetos dentro de imóvel com rachaduras.","Repassar boatos de magnitude ou de novos tremores sem confirmação oficial."],"watchFor":["Rachaduras novas, piso desnivelado e portas que travam após o tremor.","Objetos que caíram de prateleiras sem terem sido tocados.","Cheiro de gás ou som de água escapando em tubulação.","Comunicados oficiais de observatórios e da Defesa Civil."],"phones":[{"number":"199","label":"Defesa Civil"},{"number":"193","label":"Corpo de Bombeiros"},{"number":"192","label":"SAMU (feridos)"}],"realCase":{"place":"Itacarambi (MG), 9 de dezembro de 2007","text":"Um tremor de magnitude em torno de 4,9 atingiu o norte de Minas Gerais, provocou a primeira morte registrada por terremoto no Brasil e danos em casas de adobe, com famílias desalojadas.","lesson":"Mesmo tremores moderados derrubam construções frágeis sem reforço. Casa de adobe, pau-a-pique ou com parede sem amarração pede saída imediata e avaliação técnica."}},{"slug":"soterramento","title":"Pessoas soterradas e desabamento","category":"Estrutural","icon":"HardHat","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/2ec1dedde_generated_image.png","tagline":"Chame o 193 e fale com a vítima. Não remova escombros sozinho.","summary":"Nas primeiras horas, o que mais ajuda é informação: onde a pessoa está, se está consciente e se há risco de novo colapso. Retirar escombros sem técnica pode matar.","quick":["Ligar 193 imediatamente, com endereço exato e número de vítimas.","Não entrar na estrutura nem remover escombros por conta própria.","Falar com a pessoa o tempo todo e pedir que não se mova.","Isolar a área, afastar curiosos e manter a saída livre para as equipes."],"steps":[{"title":"1. Ligar 193 com informação útil","text":"Endereço completo, tipo de construção (casa, prédio, barracão, encosta), quantas pessoas estão presas, onde se ouve voz ou gemido e se há gás, fios elétricos rompidos ou material químico no local."},{"title":"2. Isolar e liberar o caminho","text":"Afaste curiosos, retire veículos e mantenha a rua livre para bombeiros, SAMU e Defesa Civil. Interrompa o trânsito se necessário e proíba o acesso à estrutura atingida."},{"title":"3. Manter contato com a vítima","text":"Se você ouve uma pessoa presa, fale com ela, identifique-se, diga que o socorro está chegando e peça que não se mova nem tente sair. Anote o horário dos últimos sinais de voz e informe à equipe na chegada."},{"title":"4. O que dá para fazer com segurança","text":"Se houver acesso estável e sem risco de novo colapso, apenas remova material leve próximo ao rosto, se isso não mexer em estruturas. Cubra a vítima para manter a temperatura, evite que ela se mova e não ofereça água nem comida sem orientação do socorro."},{"title":"5. Desligar energia e gás","text":"Se for seguro chegar ao quadro de energia e ao registro de gás, desligue os dois. Isso evita incêndio e explosão, que são a segunda causa de morte em desabamentos. Se houver cheiro forte de gás, afaste-se e avise os bombeiros imediatamente."},{"title":"6. Apoio às famílias","text":"Informe as famílias sobre o ponto de atendimento da Defesa Civil, mantenha uma lista das pessoas resgatadas e procure abrigo e assistência pelos canais oficiais do município — nunca pague a terceiros por resgate ou informação."}],"never":["Usar pá, enxada, picareta, marreta ou máquina pesada sem técnica de resgate.","Entrar em estrutura com risco de novo desabamento, mesmo para 'só olhar'.","Fazer a vítima beber ou comer: pode haver lesão interna e necessidade de cirurgia.","Deixar a pessoa sozinha ou em silêncio: a voz é a principal referência para o resgate.","Espalhar listas de vítimas sem confirmação oficial."],"watchFor":["Estalos, poeira em suspensão e trincas que aumentam depois do desabamento.","Vazamento de gás ou água em meio aos escombros.","Fios elétricos rompidos ou energizados próximos à área atingida.","Silêncio interrompido por gemidos ou batidas: marque o ponto e informe o socorro."],"phones":[{"number":"193","label":"Corpo de Bombeiros"},{"number":"192","label":"SAMU"},{"number":"199","label":"Defesa Civil"}],"realCase":{"place":"Brumadinho (MG), 25 de janeiro de 2019","text":"O rompimento da barragem do Córrego do Feijão liberou uma onda de rejeitos que destruiu a área administrativa e casas no caminho, com 270 vítimas e buscas que se estenderam por anos.","lesson":"Alertas de emergência de barragem pedem saída imediata por rota sinalizada, no sentido contrário ao do fluxo, sem voltar para buscar nada. Ao ouvir sirene, não se discute: sai-se."}},{"slug":"afogamento","title":"Afogamento e resgate na água","category":"Resgate na água","icon":"LifeBuoy","image":"https://media.base44.com/images/public/6adf978b24753c30fe55e391/7ccff5096_generated_image.png","tagline":"Jogar algo que flutua é mais eficaz do que pular na água.","summary":"Quem tenta salvar sem treinamento muitas vezes se torna a segunda vítima. Quem afoga não consegue gritar nem acenar: o corpo fica vertical, a cabeça baixa e os braços pressionam a água.","quick":["Ligar 193 (Bombeiros) ou 192 (SAMU) e não entrar na água sem treinamento.","Estender galho, toalha, corda ou jogar boia, isopor, garrafa vazia ou caixa térmica fechada.","Orientar a pessoa a flutuar de costas, com a boca fora da água, e não lutar.","Se retirar a pessoa, verificar respiração e seguir a orientação do atendente do 192."],"steps":[{"title":"1. Reconhecer um afogamento","text":"A pessoa mantém o corpo na vertical, com movimentos de subida e descida, os braços pressionando a água, a boca junto da linha da água e nenhuma capacidade de gritar ou pedir ajuda. Crianças podem estar apenas muito quietas na água."},{"title":"2. Chamar e não entrar","text":"Ligue 193 ou 192 e mantenha o telefone por perto. Sem treinamento de salvamento aquático, entrar na água transforma um afogamento em dois: a correnteza, a profundidade e o pânico da vítima derrubam até adultos fortes."},{"title":"3. Resgate de barranco ou margem","text":"Estenda deitado no chão, sem se inclinar sobre a água, algo longo: galho, cabo, remo, toalha, cinto ou corda. Jogue boia, isopor, garrafa PET fechada dentro de uma sacola ou caixa térmica com corda amarrada para puxar de volta."},{"title":"4. Quando houver barco ou prancha","text":"Se tiver acesso a barco, caiaque ou prancha, aproxime-se remando e ofereça o apoio para a pessoa segurar, mantendo sempre uma borda entre você e ela. Nunca a puxe para dentro da embarcação de uma vez: o impulso pode virá-la."},{"title":"5. Ao retirar a pessoa da água","text":"Deite a vítima de costas em superfície firme, veja se respira. Se não respira, ligue imediatamente para 192 e siga as orientações do atendente para iniciar a reanimação — em afogamento, a orientação pode começar com ventilações antes das compressões. Não tente tirar água dos pulmões e não deixe a pessoa se levantar para 'andar um pouco'."},{"title":"6. Prevenção que funciona","text":"Criança perto de água exige um adulto olhando, ao alcance do braço e sem celular na mão. Em piscina, use barreira e alarme. No mar, nade entre as bandeiras vermelhas e amarelas, próximo do posto de guarda-vidas, e nunca sozinho."}],"never":["Pular na água para salvar sem treinamento de salvamento aquático.","Mergulhar de cabeça em águas rasas ou desconhecidas: risco de lesão na coluna.","Entrar em água de enchente, canal ou córrego para buscar objeto ou pessoa.","Deixar criança sozinha perto de piscina, tanque, balde, poço ou banheira.","Nadar em rio, represa ou mar sem sinalização e sem companhia."],"watchFor":["Criança muito quieta na água, sem brincar e sem chamar — sinal clássico de afogamento.","Pessoa com corpo vertical, boca na linha da água e movimentos repetidos de subida.","Correnteza forte depois de chuva, mar com ressaca ou buraco na areia.","Banhista sozinho em praia sem posto de guarda-vidas."],"phones":[{"number":"193","label":"Corpo de Bombeiros"},{"number":"192","label":"SAMU"}],"realCase":{"place":"Brasil — afogamento é uma das principais causas de morte de crianças","text":"Segundo dados da Sociedade Brasileira de Salvamento Aquático, o afogamento mata milhares de pessoas por ano no país e está entre as maiores causas de morte de crianças de 1 a 14 anos, com muitos casos em casa, em piscinas, tanques e baldes.","lesson":"A supervisão de um adulto ao alcance do braço, sem distração, evita a maior parte dos afogamentos infantis. Em rios e praias, respeitar sinalização e guarda-vidas é o que separa o banho do resgate."}}],"quiz":{"questions":[{"id":1,"category":"Incêndio","question":"A fumaça tomou o corredor e você precisa atravessá-lo para sair. Como fazer?","correct":"Agachado ou rastejando, com um pano cobrindo nariz e boca.","wrong":"Correndo em pé, o mais rápido possível, para sair logo.","explanation":"A fumaça quente sobe e se acumula no teto. Perto do chão o ar é mais respi­rável — a maioria das mortes em incêndio é por inalação de fumaça."},{"id":2,"category":"Incêndio","question":"Você está em um quarto e suspeita de fogo atrás da porta. Antes de abrir, o que fazer?","correct":"Encostar as costas da mão na porta; se estiver quente, não abrir.","wrong":"Abrir rápido pela maçaneta para ver o que está acontecendo.","explanation":"Usa-se as costas da mão porque a palma é a parte mais necessária para agir depois. Porta quente significa fogo logo atrás dela."},{"id":3,"category":"Incêndio","question":"Começou um incêndio no prédio onde você está. Qual caminho usar para sair?","correct":"A escada de emergência, mantendo a calma.","wrong":"O elevador, porque é mais rápido e não tem fumaça.","explanation":"O elevador pode parar entre andares e virar chaminé de fumaça quente. Em incêndio, o elevador está sempre proibido."},{"id":4,"category":"Incêndio","question":"Sua roupa pegou fogo. Qual a atitude correta?","correct":"Parar, deitar no chão e rolar para abafar as chamas.","wrong":"Correr até o banheiro para jogar água por cima.","explanation":"Correr alimenta o fogo com mais oxigênio. Parar, deitar e rolar abafa as chamas. Depois, cubra a pessoa com um tecido e chame o 193."},{"id":5,"category":"Incêndio","question":"Óleo de cozinha pegou fogo dentro da panela. O que fazer?","correct":"Desligar o fogo e tampar a panela com uma tampa ou pano grosso.","wrong":"Jogar um copo de água para apagar de uma vez.","explanation":"A água explode em contato com óleo fervendo e espalha o fogo pelo ambiente. Abafar, sem oxigênio, é o que apaga."},{"id":6,"category":"Incêndio","question":"O alarme de fumaça disparou de madrugada e você não vê fogo. O que fazer?","correct":"Levantar todos, sair e ligar 193 — nunca desligar o alarme e voltar a dormir.","wrong":"Desligar o alarme e voltar a dormir, porque deve ser defeito.","explanation":"Fogo em parede, forro ou instalação elétrica demora a aparecer. O alarme existe exatamente para o momento em que ainda não se vê nada."},{"id":7,"category":"Incêndio","question":"Cheiro forte de queimado vindo das tomadas, sem fogo visível.","correct":"Desligar o disjuntor geral e chamar um eletricista antes de usar o circuito.","wrong":"Continuar usando normalmente, porque não há fogo nem fumaça.","explanation":"Cheiro de queimado em tomada é sinal clássico de sobrecarga ou mau contato — causa frequente de incêndio residencial."},{"id":8,"category":"Incêndio","question":"Sobre o uso de extensões e benjamins em casa, o correto é:","correct":"Não sobrecarregar: aparelhos de alto consumo (chuveiro, ferro, aquecedor) direto na tomada.","wrong":"Ligar vários aparelhos na mesma extensão, desde que ela seja longa.","explanation":"Extensão com muitos aparelhos esquenta o cabo e derrete o contato. É uma das principais causas de incêndio sem chama aparente."},{"id":9,"category":"Incêndio","question":"Você entra em um show, festa ou boate lotada. O que fazer primeiro?","correct":"Localizar a saída mais próxima e uma alternativa a ela.","wrong":"Guardar o celular e o documento no bolso para não perder.","explanation":"Em local cheio e escuro, quem não sabe onde fica a saída perde tempo precioso no meio da fumaça. Localize antes de se acomodar."},{"id":10,"category":"Incêndio","question":"Uma pessoa em pânico quer voltar para dentro do imóvel em chamas para buscar documentos.","correct":"Segurá-la longe do risco com firmeza e pedir que outra pessoa a acompanhe.","wrong":"Deixar que ela volte, porque é uma escolha pessoal.","explanation":"Quem volta a um ambiente tomado por fumaça raramente sai. Mantenha a pessoa longe e informe aos bombeiros que alguém quer entrar."},{"id":11,"category":"Incêndio","question":"Ao ligar para o 193, o mais importante é informar:","correct":"Endereço completo com ponto de referência, o que está queimando e se há pessoas presas.","wrong":"Primeiro o seu nome completo e o seu CPF, depois o endereço.","explanation":"O endereço e a existência de vítimas determinam o envio da equipe e o tipo de viatura. Dados pessoais não são prioridade."},{"id":12,"category":"Números","question":"Em uma emergência no Brasil, quais números funcionam?","correct":"190 (Polícia), 192 (SAMU) e 193 (Bombeiros); 911 e 112 não funcionam aqui.","wrong":"911 e 112 funcionam normalmente, iguais aos dos Estados Unidos e da Europa.","explanation":"No Brasil os números são 190, 192 e 193. Para desastre e área de risco, 199 (Defesa Civil)."},{"id":13,"category":"Números","question":"Como receber alertas de risco da Defesa Civil no celular, sem custo?","correct":"Enviar o CEP por SMS para 40199.","wrong":"Entrar em grupos de WhatsApp não oficiais de bairro.","explanation":"O cadastro por CEP no 40199 faz o alerta chegar direto ao seu telefone, com aviso oficial da Defesa Civil."},{"id":14,"category":"Gás","question":"Você sente cheiro forte de gás na cozinha. Qual a primeira atitude?","correct":"Não acionar interruptores, abrir janelas, fechar o registro do gás e sair.","wrong":"Acender a luz para enxergar melhor de onde vem o vazamento.","explanation":"Uma faísca do interruptor já inflama o gás acumulado. Ventilar, fechar o gás e sair resolve sem risco."},{"id":15,"category":"Gás","question":"Como procurar um vazamento na mangueira e nas conexões?","correct":"Passar água com sabão e observar se formam bolhas.","wrong":"Aproximar um fósforo aceso da conexão para ver se acende.","explanation":"A espuma de sabão mostra o escape sem risco nenhum. Chama é a forma mais perigosa possível de procurar vazamento."},{"id":16,"category":"Gás","question":"O botijão está com a válvula em chamas. O que fazer?","correct":"Afastar todos, sair do local e ligar 193, sem tentar remover o botijão.","wrong":"Deitar o botijão no chão para que a chama saia da válvula.","explanation":"Botijão não explode como nos filmes, mas tem válvula de alívio e pode ter jato de fogo. Deitar o cilindro agrava a situação."},{"id":17,"category":"Gás","question":"Onde é seguro guardar o botijão de gás em casa?","correct":"Em local ventilado, na posição vertical, longe de fontes de calor.","wrong":"Dentro do armário fechado embaixo da pia, para não aparecer.","explanation":"Gás de cozinha é mais pesado que o ar: em espaço fechado, ele se acumula nas partes baixas e qualquer faísca inflama."},{"id":18,"category":"Gás","question":"Sentiu cheiro de gás e precisa chamar ajuda. Como usar o celular?","correct":"Sair do ambiente e ligar de fora, em local ventilado.","wrong":"Ligar de dentro de casa, na hora, para não perder tempo.","explanation":"O aparelho pode gerar faísca. Sair, avisar as pessoas e ligar do lado de fora, seguro, é o procedimento correto."},{"id":19,"category":"Enchente","question":"A água está subindo na rua em direção à sua casa. Qual a decisão correta?","correct":"Sair agora com a família para um lugar mais alto, antes da água chegar.","wrong":"Esperar a água entrar em casa e só sair se a situação piorar.","explanation":"Sair cedo, com calma e caminho seco, é totalmente diferente de sair com água na cintura, à noite e sob correnteza."},{"id":20,"category":"Enchente","question":"Antes de deixar a casa por causa da enchente, o que desligar?","correct":"O disjuntor geral de energia e o registro de gás, se for seguro chegar até eles.","wrong":"Apenas as luzes dos cômodos, para economizar energia.","explanation":"Água e energia juntas causam choque e curto. Gás fechado evita incêndio. São os dois pontos principais a cortar."},{"id":21,"category":"Enchente","question":"Sua rua está alagada e há correnteza. Você está de carro. O que fazer?","correct":"Dar meia-volta e procurar um caminho mais alto.","wrong":"Atravessar devagar, para não entrar água no motor.","explanation":"Cerca de 30 centímetros de água em movimento já arrastam um carro pequeno. A maioria das mortes por alagamento ocorre dentro do veículo."},{"id":22,"category":"Enchente","question":"O carro já está sendo levado pela água e você está dentro. Qual a saída?","correct":"Abrir a janela e subir para o teto do carro, buscando ponto alto.","wrong":"Ficar dentro com o cinto afivelado até a chegada do socorro.","explanation":"O veículo pode submergir ou ser arrastado. Sair pela janela e subir para o teto é o que mantém você fora da água."},{"id":23,"category":"Enchente","question":"Alagamento na rua e você precisa atravessar a pé. Como agir?","correct":"Não atravessar: desviar por terreno alto ou esperar.","wrong":"Atravessar de mãos dadas com outra pessoa, para não cair.","explanation":"A água esconde bueiros abertos, buracos e fios energizados, e a correnteza pode derrubar duas pessoas de uma vez."},{"id":24,"category":"Enchente","question":"A partir de qual altura a água em movimento já derruba um adulto?","correct":"Cerca de 15 centímetros.","wrong":"Somente a partir de 1 metro de altura.","explanation":"Parece pouco, mas a força da correnteza somada ao piso escorregadio derruba. Para carros, o limite é ainda menor."},{"id":25,"category":"Enchente","question":"A água baixou. Você quer voltar para casa e limpar tudo.","correct":"Esperar a liberação da Defesa Civil e usar botas e luvas na limpeza.","wrong":"Voltar imediatamente e limpar descalço, para acabar mais rápido.","explanation":"A lama de enchente carrega esgoto e bactérias — leptospirose, hepatite e tétano são riscos reais. Proteção e liberação oficial são obrigatórias."},{"id":26,"category":"Enchente","question":"Alimentos que ficaram em contato com a água da enchente:","correct":"Descartar, mesmo os que parecem intactos ou embalados.","wrong":"Lavar bem, ferver e consumir para não desperdiçar.","explanation":"Contaminação por água de enchente não sai com lavagem; vidros, latas e embalagens podem estar comprometidos."},{"id":27,"category":"Enchente","question":"Depois de uma enchente, a água da torneira:","correct":"Não deve ser consumida até a rede ser liberada oficialmente.","wrong":"Pode ser consumida normalmente, porque a rede é tratada.","explanation":"Redes podem ser contaminadas por infiltração e retorno de esgoto. Enquanto não houver liberação, use água engarrafada ou fervida e avisada pela autoridade local."},{"id":28,"category":"Enchente","question":"E o seu animal de estimação durante a evacuação?","correct":"Levá-lo junto, com coleira ou caixa de transporte, e nunca soltá-lo na rua.","wrong":"Soltar o animal, porque ele sabe se proteger sozinho.","explanation":"Animais abandonados ficam presos, se afogam ou são atropelados. Leve junto, com identificação, e verifique com o abrigo antes."},{"id":29,"category":"Enchente","question":"Há alerta de enchente e sua filha pequena está em casa, sozinha com a avó. Você está no trabalho.","correct":"Ter combinado antes quem busca a criança e para onde vão, e ligar confirmando.","wrong":"Esperar e resolver na hora, conforme o trânsito permitir.","explanation":"Em desastre, o trânsito trava e a rede falha. O plano feito antes, com nomes definidos, é o que funciona."},{"id":30,"category":"Enchente","question":"Você vê uma pessoa sendo levada pela correnteza na sua frente.","correct":"Ligar 193, acompanhar visualmente e apontar o ponto exato aos bombeiros.","wrong":"Entrar na água atrás da pessoa para tentar segurá-la.","explanation":"Sem treinamento e equipamento, a correnteza leva os dois. Quem acompanha visualmente e chama o socorro aumenta muito a chance de resgate."},{"id":31,"category":"Deslizamento","question":"Qual destes sinais indica risco de deslizamento em uma encosta?","correct":"Rachaduras novas no muro ou no terreno e portas que passam a travar.","wrong":"Formigas aparecendo na cozinha depois da chuva.","explanation":"Rachaduras no solo, muro e piso, postes tortos, água barrenta brotando e estalos indicam movimentação de terra."},{"id":32,"category":"Deslizamento","question":"Chove forte há seis horas e você mora em encosta, com rachaduras no muro.","correct":"Sair de casa com a família e ir para um lugar seguro em terreno plano.","wrong":"Ficar em casa, porque o pior acontece só quando a chuva para.","explanation":"O solo encharcado cede justamente durante e depois da chuva, muitas vezes de madrugada. O aviso é a própria chuva acumulada."},{"id":33,"category":"Deslizamento","question":"Ao sair de uma área com risco de deslizamento, para qual direção ir?","correct":"Para o lado, buscando terreno plano e firme.","wrong":"Descendo a encosta, pelo caminho mais curto.","explanation":"A massa de terra desce pela encosta. Fugir para baixo é colocar-se no mesmo caminho dela: saia lateralmente."},{"id":34,"category":"Deslizamento","question":"Você ouve a voz de uma pessoa soterrada por terra e escombros.","correct":"Ligar 193, falar com a pessoa e marcar o local, sem cavar por conta própria.","wrong":"Cavar com pá para tirar a pessoa o mais rápido possível.","explanation":"Remover material sem técnica pode desestabilizar a massa e ferir a vítima. A voz é a principal referência para a equipe de resgate."},{"id":35,"category":"Deslizamento","question":"Quando é possível voltar para uma casa atingida por deslizamento?","correct":"Somente depois da liberação e do laudo técnico da Defesa Civil.","wrong":"Assim que a chuva parar, se a casa ainda estiver de pé.","explanation":"Estrutura com base comprometida pode colapsar depois. Aguarde a vistoria técnica e registre os danos com fotos."},{"id":36,"category":"Tempestade","question":"Começou a tempestade com raios e você está na rua. Onde se abrigar?","correct":"Em construção fechada, de alvenaria, longe de janelas.","wrong":"Debaixo de uma árvore grande, que segura a chuva.","explanation":"Árvore isolada é um dos piores pontos: atrai a descarga. Construção fechada ou veículo com teto rígido são os abrigos corretos."},{"id":37,"category":"Tempestade","question":"Você está na praia e começa a trovejar. O que fazer?","correct":"Sair da água e da areia e buscar abrigo em construção fechada.","wrong":"Ficar sentado na areia, porque é um local baixo e seguro.","explanation":"Praia e mar são áreas expostas, sem proteção. Ao primeiro trovão, procure abrigo: cerca de metade das vítimas é atingida antes ou depois do pico da tempestade."},{"id":38,"category":"Tempestade","question":"Um fio de energia caiu na calçada perto de você.","correct":"Isolar a área, manter pelo menos 10 metros de distância e ligar 193.","wrong":"Usar um pedaço de madeira para afastar o fio do caminho.","explanation":"Considere sempre o fio energizado. Madeira molhada, metal e o solo ao redor conduzem corrente: não se aproxima nem com objeto isolante improvisado."},{"id":39,"category":"Tempestade","question":"Durante a tempestade, dentro de casa, o correto é:","correct":"Retirar aparelhos da tomada e evitar chuveiro e torneira.","wrong":"Tomar banho e assistir televisão até a chuva passar.","explanation":"A rede elétrica e a hidráulica conduzem a descarga para dentro da casa. Aparelhos fora da tomada e longe da água reduzem o risco."},{"id":40,"category":"Tempestade","question":"Vendaval chegando e você está em casa. O que fazer?","correct":"Fechar e travar janelas, afastar-se dos vidros e recolher objetos soltos da sacada.","wrong":"Abrir todas as janelas para o vento atravessar a casa.","explanation":"Vidro quebrado e objeto arremessado são as principais causas de ferimento em vendaval. Se o vento virar, abra uma janela só do lado oposto, para equilibrar a pressão."},{"id":41,"category":"Tempestade","question":"Um fio energizado caiu sobre o carro em que você está.","correct":"Permanecer dentro, sem tocar em partes metálicas, até a energia ser desligada.","wrong":"Sair correndo do carro imediatamente.","explanation":"O carro funciona como proteção enquanto você não toca no metal e no chão ao mesmo tempo. Sair pode eletrocutar."},{"id":42,"category":"Tempestade","question":"Há previsão de temporal forte para a sua região. O que fazer antes?","correct":"Carregar o celular, separar lanterna, proteger documentos e combinar a rota de saída.","wrong":"Não fazer nada, porque aviso de chuva costuma errar.","explanation":"Preparo leva poucos minutos e evita decisões ruins no escuro, sem bateria e sem documentos — exatamente o cenário de muitas emergências."},{"id":43,"category":"Tremor","question":"Começou um tremor de terra e você está dentro de casa.","correct":"Agachar-se embaixo de uma mesa resistente, protegendo a cabeça com os braços.","wrong":"Correr para a escada e descer imediatamente para a rua.","explanation":"Durante o tremor, mover-se é o que causa ferimento por queda de objetos e vidros. Agachar, proteger e segurar."},{"id":44,"category":"Tremor","question":"O tremor passou e você está em um prédio. Como sair?","correct":"Pela escada, com calma, verificando degraus e estrutura.","wrong":"Pelo elevador, que desce mais rápido.","explanation":"Elevador pode estar com energia instável e estrutura danificada. Só a escada é opção depois de um tremor."},{"id":45,"category":"Tremor","question":"Depois do tremor, você sente cheiro de gás no corredor.","correct":"Sair sem acender nada, ventilar e ligar 193 de fora.","wrong":"Acender a luz do corredor para ver de onde vem o vazamento.","explanation":"Tremor danifica tubulações. Nada de interruptor, fósforo ou celular dentro do ambiente: saia e chame os bombeiros."},{"id":46,"category":"Tremor","question":"Você está na rua quando o tremor começa. Onde ficar?","correct":"Em área aberta, longe de prédios, muros, postes e fios.","wrong":"Encostado na parede de um prédio, para se proteger de objetos que caem.","explanation":"Fachadas, muros e vidros são o que cai. Área aberta, longe de qualquer construção, é a posição mais segura."},{"id":47,"category":"Soterramento","question":"Uma estrutura desabou e há alguém preso nos escombros.","correct":"Chamar o 193, isolar a área e manter contato falando com a pessoa.","wrong":"Usar picareta e marreta para abrir espaço o mais rápido possível.","explanation":"Ferramenta pesada pode causar novo colapso e ferir a vítima. Informação, contato e isolamento são o que ajuda o resgate agora."},{"id":48,"category":"Soterramento","question":"A pessoa presa está pedindo água.","correct":"Não oferecer água nem comida e seguir a orientação da equipe de socorro.","wrong":"Dar água em pequenos goles para acalmar a pessoa.","explanation":"Pode haver lesão interna e necessidade de cirurgia imediata, e a ingestão complica o atendimento. O socorro orienta o que fazer."},{"id":49,"category":"Afogamento","question":"Como reconhecer alguém se afogando?","correct":"Corpo na vertical, boca junto à linha da água, sem conseguir gritar ou acenar.","wrong":"Pessoa gritando alto e agitando os braços, pedindo ajuda.","explanation":"O afogamento é silencioso e leva menos de um minuto. Em criança, o sinal mais comum é ela ficar muito quieta na água."},{"id":50,"category":"Afogamento","question":"Uma pessoa está se afogando a 30 metros da margem e você não é socorrista.","correct":"Ligar 193 e jogar ou estender algo que flutua, sem entrar na água.","wrong":"Nadar até ela imediatamente, porque é a atitude mais rápida.","explanation":"Sem treinamento, quem entra na água vira a segunda vítima. Boia, isopor, garrafa fechada ou caixa térmica com corda podem salvar as duas vidas."}],"secondsPerQuestion":60},"kit":[{"id":"mochila","title":"Mochila de emergência","subtitle":"Uma por família, na saída mais fácil da casa.","items":["Água: 2 litros por pessoa por dia (mínimo para 3 dias)","Alimentos não perecíveis que não precisem de cozimento","Remédios de uso contínuo, com receita e validade conferida","Lanterna de pilha, pilhas extras e apito","Rádio a pilha ou a manivela","Carregador portátil carregado e cabo","Kit de primeiros socorros: gaze, esparadrapo, antisséptico, luvas","Kit de higiene: escova, pasta, sabonete, absorventes, papel higiênico","Roupas, cobertor térmico e capa de chuva","Cópia das chaves de casa e do carro","Dinheiro em espécie, em notas pequenas","Alimentos e caixa de transporte do animal de estimação"]},{"id":"documentos","title":"Documentos e informações","subtitle":"Protegidos da água e com cópia digital.","items":["Documento de identidade, CPF e certidões de todos da família","Cartão do SUS, carteira de vacinação e receitas médicas","Escritura ou contrato da casa e apólices de seguro","Cópia digital dos documentos no celular e na nuvem","Lista de telefones de emergência impressa na mochila","Nome e contato de um parente de fora da cidade","Endereço e telefone do posto de saúde mais próximo"]},{"id":"casa","title":"Casa preparada","subtitle":"O que evita o desastre antes dele chegar.","items":["Rota de saída desobstruída e testada por todos","Extintor de incêndio válido e saber usar","Detector de fumaça instalado perto dos quartos","Instalação elétrica revisada, sem extensões sobrecarregadas","Mangueira de gás e regulador dentro da validade","Calhas, telhado e ralos limpos antes da temporada de chuva","Documentos e eletrônicos acima do nível de uma enchente","Áreas de risco da rua identificadas com a Defesa Civil"]}],"plan":[{"title":"1. Reúna a família e decida junto","text":"Marque uma conversa de 30 minutos com todos, incluindo crianças. Explique os riscos da sua região e o que cada um deve fazer se estiver sozinho."},{"title":"2. Defina o ponto de encontro","text":"Escolha um lugar seguro e conhecido, fora da área de risco, e um segundo ponto caso o primeiro esteja indisponível. Combine também quem busca as crianças na escola."},{"title":"3. Combine um contato de fora","text":"Escolha um parente de outra cidade. Em desastre, ligações locais falham mais que as de longa distância — todos avisam pelo mesmo contato."},{"title":"4. Monte e teste a mochila","text":"Monte a mochila, confira validade e guarde na saída mais rápida da casa. Todo ano, faça um simulado de saída: cronometre e veja o que precisa mudar."},{"title":"5. Cadastre e acompanhe os alertas","text":"Cada pessoa da casa envia o CEP para o 40199 e conhece o canal oficial do município. Em área de risco, a Defesa Civil pode pedir evacuação: a decisão é sair."},{"title":"6. Prepare quem tem mais dificuldade","text":"Idosos, crianças, gestantes e pessoas com deficiência saem primeiro. Combine quem acompanha cada pessoa e garanta remédios e acessórios necessários junto ao corpo."}]};</script>
+<script>(function () {
+  var D = window.DC_DATA;
+  var app = document.getElementById("app");
+  var checks = {};
+  var best = null;
+  var quiz = null;
+  var timer = null;
+  var lastKey = null;
+
+  try {
+    var rawKit = window.localStorage.getItem("dc-kit-checklist");
+    if (rawKit) { checks = JSON.parse(rawKit) || {}; }
+    var rawBest = window.localStorage.getItem("dc-quiz-melhor-pontuacao");
+    if (rawBest !== null) { best = Number(rawBest); }
+  } catch (e) { checks = {}; }
+
+  function esc(v) {
+    return String(v === undefined || v === null ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function icon(name, cls) {
+    return '<svg class="' + (cls || "ic") + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (D.icons[name] || D.icons.Flame) + "</svg>";
+  }
+  function pad(n) { return String(n + 1).padStart(2, "0"); }
+  function clean(t) { return String(t).replace(/^\d+\.\s*/, ""); }
+  function shuffle(list) {
+    var copy = list.slice();
+    for (var i = copy.length - 1; i > 0; i -= 1) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+    }
+    return copy;
+  }
+  function block(alt, eyebrow, title, intro, body) {
+    return '<section class="block' + (alt ? " alt" : "") + '"><div class="wrap">' +
+      (eyebrow ? '<span class="eyebrow mono">' + esc(eyebrow) + "</span>" : "") +
+      "<h2>" + esc(title) + "</h2>" +
+      (intro ? '<p class="lead">' + esc(intro) + "</p>" : "") + body + "</div></section>";
+  }
+  function dialCard(number) {
+    var item = null;
+    for (var i = 0; i < D.numbers.length; i += 1) { if (D.numbers[i].number === number) { item = D.numbers[i]; } }
+    if (!item) { return ""; }
+    var tone = item.tone === "critical" ? " critical" : (item.tone === "signal" ? " signal" : "");
+    return '<a class="dial' + tone + '" href="tel:' + esc(item.number) + '">' +
+      '<span class="dial-num mono">' + esc(item.number) + "</span>" +
+      '<span class="dial-txt"><strong>' + esc(item.service) + "</strong>" +
+      (item.description ? "<small>" + esc(item.description) + "</small>" : "") + "</span>" +
+      '<span class="dial-go">' + icon("PhoneCall", "ic-sm") + "<em>LIGAR</em></span></a>";
+  }
+  function rows(items, iconName, cls) {
+    var out = "";
+    for (var i = 0; i < items.length; i += 1) {
+      out += '<li class="' + cls + '">' + (iconName ? icon(iconName, "ic-sm") : "") + "<span>" + esc(items[i]) + "</span></li>";
+    }
+    return '<ul class="rows">' + out + "</ul>";
+  }
+  function stepsList(steps) {
+    var out = "";
+    for (var i = 0; i < steps.length; i += 1) {
+      out += '<li class="step"><span class="step-n mono">' + pad(i) + '</span><div><strong>' + esc(clean(steps[i].title)) + "</strong><p>" + esc(steps[i].text) + "</p></div></li>";
+    }
+    return '<ol class="steps">' + out + "</ol>";
+  }
+  function situationCard(s, i) {
+    return '<a class="scard" href="#/situacao/' + esc(s.slug) + '">' +
+      '<span class="scard-img"><img src="' + esc(s.image) + '" alt="' + esc(s.title) + '" loading="lazy">' +
+      '<em class="mono">' + pad(i) + '</em><i class="tile">' + icon(s.icon) + "</i></span>" +
+      '<span class="scard-body"><span class="cat mono">' + esc(s.category) + "</span><strong>" + esc(s.title) + "</strong><small>" + esc(s.tagline) + "</small><em>Ver o que fazer &rarr;</em></span></a>";
+  }
+
+  function viewHome() {
+    return '<section class="hero"><div class="wrap">' +
+      '<span class="tag mono">PROTEÇÃO E DEFESA DO CIDADÃO · BRASIL</span>' +
+      "<h1>Defesa Civil do Brasil</h1>" +
+      "<p>A Defesa Civil previne o desastre antes dele acontecer: vistoria encostas e imóveis em risco, emite alertas, coordena a evacuação, abre abrigo e assiste as famílias atingidas. Quando a chuva chega, ninguém decide no seu lugar — quem age primeiro é você.</p>" +
+      '<div class="grid3">' + D.primary.map(dialCard).join("") + "</div>" +
+      '<p class="note mono">TOQUE NO NÚMERO PARA LIGAR · 911 E 112 NÃO FUNCIONAM NO BRASIL</p>' +
+      "</div></section>" +
+      block(false, "8 SITUAÇÕES REAIS", "Como agir em cada risco", "Passo a passo curto, o que nunca fazer e casos reais brasileiros em cada guia.", '<div class="grid3">' + D.situations.map(situationCard).join("") + "</div>");
+  }
+
+  function viewNumeros() {
+    var groups = "";
+    for (var g = 0; g < D.groupOrder.length; g += 1) {
+      var name = D.groupOrder[g];
+      var items = "";
+      for (var i = 0; i < D.numbers.length; i += 1) {
+        if (D.numbers[i].group === name) { items += dialCard(D.numbers[i].number); }
+      }
+      if (items) {
+        groups += '<h2 style="font-size:12px;letter-spacing:.25em;padding-bottom:8px;border-bottom:4px solid var(--ink);font-family:var(--mono)">' + esc(name.toUpperCase()) + '</h2><div class="grid2">' + items + "</div>";
+      }
+    }
+    var tips = "";
+    for (var t = 0; t < D.callTips.length; t += 1) {
+      tips += '<li class="step"><span class="step-n mono">' + pad(t) + "</span><div><p>" + esc(D.callTips[t]) + "</p></div></li>";
+    }
+    return '<div class="wrap page"><span class="eyebrow mono">TODO O BRASIL</span><h1 style="margin-top:12px">Números de emergência</h1>' +
+      '<p class="lead">Toque em qualquer número para ligar direto do celular. Salve os principais na lista de contatos do aparelho — no momento da emergência, ninguém quer procurar.</p>' +
+      '<div style="margin-top:34px;display:flex;flex-direction:column;gap:34px">' + groups + "</div>" +
+      '<div class="card"><h3>Como falar com o atendente</h3><ol class="steps">' + tips + "</ol></div>" +
+      '<div class="card card-call"><h3>Atenção</h3>' + rows(D.notes, null, "") + "</div></div>";
+  }
+
+  function viewSituacoes() {
+    return '<div class="wrap page"><span class="eyebrow mono">GUIAS DE EMERGÊNCIA</span><h1 style="margin-top:12px">O que fazer em cada situação</h1>' +
+      '<p class="lead">Oito riscos que matam no Brasil todos os anos, com o passo a passo oficial, o que nunca fazer, os sinais de alerta e o caso real que virou protocolo.</p>' +
+      '<div class="grid3">' + D.situations.map(situationCard).join("") + "</div></div>";
+  }
+
+  function viewSituacao(slug) {
+    var s = null;
+    for (var i = 0; i < D.situations.length; i += 1) { if (D.situations[i].slug === slug) { s = D.situations[i]; } }
+    if (!s) { return viewSituacoes(); }
+    var phones = "";
+    for (var p = 0; p < s.phones.length; p += 1) {
+      phones += '<a class="dial signal" href="tel:' + esc(s.phones[p].number) + '">' +
+        '<span class="dial-num mono">' + esc(s.phones[p].number) + "</span>" +
+        '<span class="dial-txt"><strong>' + esc(s.phones[p].label) + "</strong></span>" +
+        '<span class="dial-go">' + icon("PhoneCall", "ic-sm") + "<em>LIGAR</em></span></a>";
+    }
+    return '<div class="wrap page">' +
+      '<a class="back mono" href="#/situacoes">' + icon("ArrowLeft", "ic-sm") + "TODAS AS SITUAÇÕES</a>" +
+      '<div class="shero"><img src="' + esc(s.image) + '" alt="' + esc(s.title) + '">' +
+      '<div class="shero-t"><span class="cat mono">' + esc(s.category) + "</span><h1>" + esc(s.title) + "</h1><p>" + esc(s.tagline) + "</p></div></div>" +
+      '<p class="lead">' + esc(s.summary) + "</p>" +
+      '<div class="card"><h3>Faça agora</h3>' + rows(s.quick, "Check", "ok") + "</div>" +
+      '<div class="card"><h3>Passo a passo</h3>' + stepsList(s.steps) + "</div>" +
+      '<div class="card card-never"><h3>Nunca faça</h3>' + rows(s.never, "X", "no") + "</div>" +
+      '<div class="card"><h3>Sinais de alerta</h3>' + rows(s.watchFor, "Eye", "watch") + "</div>" +
+      '<div class="card case"><span class="eyebrow mono">CASO REAL</span><h3 style="margin-top:10px">' + esc(s.realCase.place) + "</h3><p>" + esc(s.realCase.text) + '</p><p class="lesson">' + esc(s.realCase.lesson) + "</p></div>" +
+      '<div class="card card-call"><h3>Quem chamar</h3><div class="grid2">' + phones + "</div></div></div>";
+  }
+
+  function ring(seconds) {
+    var total = D.quiz.secondsPerQuestion;
+    var circumference = 113.1;
+    var offset = circumference * (1 - Math.max(0, seconds) / total);
+    var danger = seconds <= 10 ? " danger" : "";
+    return '<span class="ring mono' + danger + '"><svg viewBox="0 0 44 44">' +
+      '<circle class="ring-bg" cx="22" cy="22" r="18"></circle>' +
+      '<circle class="ring-fg" cx="22" cy="22" r="18" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + offset + '"></circle>' +
+      "</svg><b>" + Math.max(0, seconds) + "</b></span>";
+  }
+
+  function quizIntro() {
+    return '<div class="wrap page"><span class="eyebrow mono">TREINO DE DECISÃO</span><h1 style="margin-top:12px">Quiz de emergência</h1>' +
+      '<p class="lead">' + D.quiz.questions.length + " situações reais, " + D.quiz.secondsPerQuestion + " segundos para decidir em cada uma. A ordem sorteia e as alternativas trocam de lugar em cada rodada.</p>" +
+      '<div class="card"><h3>Como funciona</h3>' + rows([
+        "São " + D.quiz.questions.length + " perguntas sorteadas do banco completo.",
+        "Você tem " + D.quiz.secondsPerQuestion + " segundos por pergunta; ao acabar o tempo, ela conta como erro.",
+        "Cada resposta vem com a explicação, para você entender o porquê."
+      ], "Check", "ok") +
+      (best === null ? "" : '<p class="mono" style="margin-top:16px;font-size:11px;letter-spacing:.16em">MELHOR RESULTADO: ' + best + " DE " + D.quiz.questions.length + "</p>") +
+      '<button class="btn" data-action="start">Começar o treino</button></div></div>';
+  }
+
+  function quizResult() {
+    var total = quiz.round.length;
+    var pct = Math.round((quiz.score / total) * 100);
+    var review = "";
+    for (var i = 0; i < quiz.round.length; i += 1) {
+      var a = quiz.answers[i];
+      if (a && !a.correct) {
+        review += "<li><strong>" + esc(a.question) + "</strong><small>Você marcou: " + esc(a.given) + '</small><small style="color:#1f7a45">Certo: ' + esc(a.right) + "</small></li>";
+      }
+    }
+    return '<div class="wrap page"><span class="eyebrow mono">RESULTADO</span><h1 style="margin-top:12px">' + quiz.score + " de " + total + " acertos</h1>" +
+      '<p class="lead">' + pct + "% de aproveitamento. Melhor resultado neste aparelho: " + best + " de " + total + ".</p>" +
+      '<div class="card"><h3>O que revisar</h3>' +
+      (review ? '<ul class="review">' + review + "</ul>" : '<p class="lead" style="margin-top:0">Nenhum erro. Agora treine o caminho de saída da sua casa com a família.</p>') +
+      '<button class="btn" data-action="start">Treinar de novo</button> <a class="btn ghost" href="#/situacoes">Rever os guias</a></div></div>';
+  }
+
+  function viewQuiz() {
+    if (!quiz) { return quizIntro(); }
+    if (quiz.done) { return quizResult(); }
+    var q = quiz.round[quiz.index];
+    var answered = quiz.selected !== null || quiz.timedOut;
+    var opts = "";
+    for (var i = 0; i < q.options.length; i += 1) {
+      var opt = q.options[i];
+      var cls = "opt";
+      if (answered) {
+        if (opt.isCorrect) { cls += " correct"; }
+        else if (quiz.selected === i) { cls += " wrong"; }
+      }
+      opts += '<button class="' + cls + '" data-action="answer" data-index="' + i + '"' + (answered ? " disabled" : "") + ">" + esc(opt.text) + "</button>";
+    }
+    var feedback = "";
+    if (answered) {
+      var right = quiz.selected !== null && q.options[quiz.selected].isCorrect;
+      feedback = '<div class="fb ' + (right ? "ok" : "no") + '"><strong>' +
+        (right ? "Resposta certa" : (quiz.timedOut ? "O tempo acabou" : "Resposta incorreta")) +
+        "</strong><p>A resposta correta é: <b>" + esc(q.correct) + "</b></p><p>" + esc(q.explanation) + "</p></div>" +
+        '<button class="btn" data-action="next">' + (quiz.index + 1 >= quiz.round.length ? "Ver o resultado" : "Próxima pergunta") + "</button>";
+    }
+    return '<div class="wrap page"><div class="quizbar"><span class="mono">PERGUNTA ' + (quiz.index + 1) + " DE " + quiz.round.length + "</span>" +
+      ring(quiz.timeLeft) +
+      '<span class="mono">ACERTOS ' + quiz.score + "</span></div>" +
+      '<div class="qcard"><span class="cat mono">' + esc(q.category) + "</span><h2>" + esc(q.question) + "</h2>" + opts + feedback + "</div></div>";
+  }
+
+  function viewKit() {
+    var lists = "";
+    for (var c = 0; c < D.kit.length; c += 1) {
+      var list = D.kit[c];
+      var done = 0;
+      var items = "";
+      for (var i = 0; i < list.items.length; i += 1) {
+        var id = list.id + "-" + i;
+        var on = checks[id] === true;
+        if (on) { done += 1; }
+        items += '<label class="check' + (on ? " done" : "") + '" data-check="' + id + '">' +
+          '<input type="checkbox" data-action="check" data-id="' + id + '"' + (on ? " checked" : "") + ">" +
+          '<span class="box mono">' + icon("Check", "ic-xs") + "</span>" +
+          '<span class="txt">' + esc(list.items[i]) + "</span></label>";
+      }
+      lists += '<div class="card"><div class="checkhead"><h3>' + esc(list.title) + '</h3><span class="mono" data-progress="' + list.id + '">' + done + "/" + list.items.length + '</span></div><p class="sub">' + esc(list.subtitle) + "</p>" + items + "</div>";
+    }
+    return '<div class="wrap page"><span class="eyebrow mono">LEVE NO BOLSO</span><h1 style="margin-top:12px">Kit e plano de emergência</h1>' +
+      '<p class="lead">Marque o que já está pronto. O progresso fica salvo neste navegador.</p>' + lists +
+      '<div class="card"><h3>Plano da família</h3>' + stepsList(D.plan) + "</div></div>";
+  }
+
+  function route() {
+    var hash = window.location.hash || "";
+    if (hash.indexOf("#/") !== 0) { return { view: "home", key: "home" }; }
+    var parts = hash.slice(2).split("/");
+    if (parts[0] === "numeros") { return { view: "numeros", key: "numeros" }; }
+    if (parts[0] === "situacoes") { return { view: "situacoes", key: "situacoes" }; }
+    if (parts[0] === "situacao") { return { view: "situacao", key: "situacao/" + (parts[1] || ""), slug: parts[1] || "" }; }
+    if (parts[0] === "quiz") { return { view: "quiz", key: "quiz" }; }
+    if (parts[0] === "kit") { return { view: "kit", key: "kit" }; }
+    return { view: "home", key: "home" };
+  }
+
+  function startTimer() {
+    if (timer) { return; }
+    timer = window.setInterval(tick, 1000);
+  }
+  function stopTimer() {
+    if (timer) { window.clearInterval(timer); timer = null; }
+  }
+  function tick() {
+    if (!quiz || quiz.done || quiz.selected !== null || quiz.timedOut) { stopTimer(); return; }
+    quiz.timeLeft -= 1;
+    if (quiz.timeLeft <= 0) { quiz.timeLeft = 0; quiz.timedOut = true; stopTimer(); }
+    paint();
+  }
+
+  function startQuiz() {
+    var round = shuffle(D.quiz.questions).map(function (item) {
+      return {
+        category: item.category,
+        question: item.question,
+        correct: item.correct,
+        explanation: item.explanation,
+        options: shuffle([
+          { text: item.correct, isCorrect: true },
+          { text: item.wrong, isCorrect: false }
+        ])
+      };
+    });
+    quiz = { round: round, answers: [], index: 0, selected: null, timedOut: false, score: 0, timeLeft: D.quiz.secondsPerQuestion, done: false };
+    startTimer();
+    paint();
+  }
+  function answerQuiz(index) {
+    if (!quiz || quiz.done || quiz.selected !== null || quiz.timedOut) { return; }
+    var q = quiz.round[quiz.index];
+    quiz.selected = index;
+    var right = q.options[index].isCorrect;
+    if (right) { quiz.score += 1; }
+    quiz.answers[quiz.index] = { question: q.question, right: q.correct, given: q.options[index].text, correct: right };
+    stopTimer();
+    paint();
+  }
+  function nextQuiz() {
+    if (!quiz) { return; }
+    if (quiz.index + 1 >= quiz.round.length) {
+      quiz.done = true;
+      stopTimer();
+      if (best === null || quiz.score > best) {
+        best = quiz.score;
+        try { window.localStorage.setItem("dc-quiz-melhor-pontuacao", String(best)); } catch (e) {}
+      }
+      paint();
+      return;
+    }
+    quiz.index += 1;
+    quiz.selected = null;
+    quiz.timedOut = false;
+    quiz.timeLeft = D.quiz.secondsPerQuestion;
+    startTimer();
+    paint();
+  }
+  function timeoutEntry() {
+    var q = quiz.round[quiz.index];
+    if (!quiz.answers[quiz.index]) {
+      quiz.answers[quiz.index] = { question: q.question, right: q.correct, given: "tempo esgotado", correct: false };
+    }
+  }
+
+  function toggleCheck(id) {
+    checks[id] = checks[id] !== true;
+    try { window.localStorage.setItem("dc-kit-checklist", JSON.stringify(checks)); } catch (e) {}
+    var label = document.querySelector('[data-check="' + id + '"]');
+    if (label) { label.className = "check" + (checks[id] ? " done" : ""); }
+    var listId = id.split("-")[0];
+    var counter = document.querySelector('[data-progress="' + listId + '"]');
+    if (counter) {
+      var size = 0;
+      var done = 0;
+      for (var i = 0; i < D.kit.length; i += 1) {
+        if (D.kit[i].id === listId) {
+          size = D.kit[i].items.length;
+          for (var j = 0; j < size; j += 1) { if (checks[listId + "-" + j] === true) { done += 1; } }
+        }
+      }
+      counter.textContent = done + "/" + size;
+    }
+  }
+
+  function markNav(r) {
+    var tabs = document.querySelectorAll("[data-nav]");
+    for (var i = 0; i < tabs.length; i += 1) {
+      var key = tabs[i].getAttribute("data-nav");
+      var active = key === r.view || (key === "situacoes" && r.view === "situacao");
+      tabs[i].className = "tab" + (active ? " active" : "");
+    }
+  }
+
+  function paint() {
+    var r = route();
+    var html = "";
+    if (r.view === "numeros") { html = viewNumeros(); }
+    else if (r.view === "situacoes") { html = viewSituacoes(); }
+    else if (r.view === "situacao") { html = viewSituacao(r.slug); }
+    else if (r.view === "quiz") { html = viewQuiz(); }
+    else if (r.view === "kit") { html = viewKit(); }
+    else { html = viewHome(); }
+    if (r.view === "quiz" && quiz && !quiz.done && quiz.selected === null && !quiz.timedOut) { startTimer(); }
+    else if (r.view !== "quiz") { stopTimer(); }
+    app.innerHTML = html;
+    markNav(r);
+    if (r.key !== lastKey) { window.scrollTo(0, 0); lastKey = r.key; }
+  }
+
+  function nav(container) {
+    var items = [["home", "INÍCIO", "Home", "#/"], ["numeros", "NÚMEROS", "PhoneCall", "#/numeros"], ["situacoes", "SITUAÇÕES", "AlertTriangle", "#/situacoes"], ["quiz", "QUIZ", "Target", "#/quiz"], ["kit", "KIT", "Briefcase", "#/kit"]];
+    var out = "";
+    for (var i = 0; i < items.length; i += 1) {
+      out += '<a class="tab" href="' + items[i][3] + '" data-nav="' + items[i][0] + '"><span class="icwrap">' + icon(items[i][2], "ic-sm") + "</span>" + items[i][1] + "</a>";
+    }
+    container.innerHTML = out;
+  }
+
+  document.getElementById("tabs-top").innerHTML = "";
+  nav(document.getElementById("tabs-top"));
+  nav(document.getElementById("tabs-mobile"));
+
+  document.addEventListener("click", function (event) {
+    var target = event.target && event.target.closest ? event.target.closest("[data-action]") : null;
+    if (!target) { return; }
+    var action = target.getAttribute("data-action");
+    if (action === "start") { startQuiz(); }
+    else if (action === "answer") { answerQuiz(Number(target.getAttribute("data-index"))); }
+    else if (action === "next") { timeoutEntry(); nextQuiz(); }
+  });
+  document.addEventListener("change", function (event) {
+    var target = event.target;
+    if (target && target.getAttribute && target.getAttribute("data-action") === "check") {
+      toggleCheck(target.getAttribute("data-id"));
+    }
+  });
+  window.addEventListener("hashchange", paint);
+  paint();
+})();</script>
+</body>
+</html>
